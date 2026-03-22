@@ -1,4 +1,5 @@
 (function (global) {
+
   const HEADERS = ["Cod", "Secc", "Curso", "Tipo", "Horario", "Aula", "Docente"];
   const TITLE = "Matrícula UNI | Horarios";
   const TABLE_NAME = "HorariosUNI";
