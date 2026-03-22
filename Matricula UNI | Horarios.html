@@ -1,0 +1,6597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8" />
+	<title>Matricula UNI  | Horarios
+</title>
+	<meta name="description" content="Nuevo Sistema de Matrícula UNI 2019" />
+	<meta name="author" content="ORCE" />
+	<meta name="keyword" content="UNI, Matrícula, ORCE, Laravel, FIIS Developers" />
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- end: Mobile Specific -->
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<!-- start: CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="css/style.min.css" rel="stylesheet" />
+	<link href="css/style-responsive.min.css" rel="stylesheet" />
+	<link href="css/retina.css" rel="stylesheet" />
+	<!-- end: CSS -->
+	
+
+	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+	
+	<!-- start: Favicon and Touch Icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+	<link rel="shortcut icon" href="ico/favicon.png" />
+	<!-- end: Favicon and Touch Icons -->	
+
+<body>
+	<!-- start: Header -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a id="main-menu-toggle" class="hidden-phone open"><i class="icon-reorder"></i></a>		
+				<div class="row-fluid">
+				<a class="brand span2" id="ainicio" href="inicio"><span>Matrícula UNI</span></a>
+				</div>		
+				
+				<!-- start: Header Menu -->
+				<div class="nav-no-collapse header-nav">
+					<ul class="nav pull-right">
+												<!-- start: User Dropdown -->
+						<li class="dropdown">
+	<a class="btn account dropdown-toggle" data-toggle="dropdown" href="#">
+				<div class="user">
+			<span class="hello">Bienvenid@!</span>
+			<span class="name">Jhefferson Monteza</span>
+		</div>
+	</a>
+	<ul class="dropdown-menu">
+		<li class="dropdown-menu-title">
+			
+		</li>
+				<li><a href="salir"><i class="icon-off"></i> Salir</a></li>
+	</ul>
+</li>						<!-- end: User Dropdown -->
+					</ul>
+				</div>
+				<!-- end: Header Menu -->
+				
+			</div>
+		</div>
+	</div>
+	<!-- start: Header -->
+	
+		<div class="container-fluid-full">
+		<div class="row-fluid">
+				
+			<!-- start: Main Menu -->
+			<div id="sidebar-left" class="span2">
+	<div class="nav-collapse sidebar-nav">
+		<ul class="nav nav-tabs nav-stacked main-menu">
+			<!-- <li><a href="https://www.academico.uni.edu.pe/alumno/avance-curricular" target="_blank"><i class="icon-folder-open-alt"></i><span class="hidden-tablet"> Avance Curricular</span></a></li> -->
+			<li><a href="inscribirse" class="local"><i class="icon-pencil"></i><span class="hidden-tablet"> MATRICULA</span></a></li>
+			<li><a href="cursos" class="local"><i class="icon-book"></i><span class="hidden-tablet"> Cursos Disponibles</span></a></li>
+			<li><a href="vacantes" class="local"><i class="icon-eye-open"></i><span class="hidden-tablet"> Vacantes</span></a></li>
+			<li><a href="horarios" class="local"><i class="icon-calendar"></i><span class="hidden-tablet"> Horarios</span></a></li>
+			<li><a href="#" onclick='windowOpener("chat","chatsapp","width=400,height=450,directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no");'>
+            	<i class="icon-folder-open-alt"></i><span class="hidden-tablet"> Consultas Online</span>
+                </a>
+            </li> 
+			
+			<li><a href="salir" class="local"><i class="icon-lock"></i><span class="hidden-tablet"> Salir</span></a></li>
+		</ul>
+		<script>
+			function windowOpener(url, name, args) {
+				if (typeof(popupWin) != "object"){
+					popupWin = window.open(url,name,args);
+				} else {
+					if (popupWin.closed){ 
+						popupWin = window.open(url, name,args);
+					}
+				}
+				popupWin.focus();
+			}
+		</script>
+	</div>
+</div>
+			<!-- end: Main Menu -->
+						
+			<!-- start: Content -->
+			<div id="content" class="span10">
+			
+			<div class="row-fluid">
+		<div class="box span12">
+		<div class="box-header">
+			<h2><i class="icon-align-justify"></i><span class="break">HORARIOS</span></h2>
+		</div>
+		<div class="box-content">
+			<table class="table table-bordered table-striped table-condensed">
+				  <thead>
+					  <tr>
+						  <th class="span1">Cod</th>
+						  <th class="span1">Secc</th>
+						  <th>Curso</th>
+						  
+						  <th class="span1">Tipo</th>                                          
+						  <th class="span2">Horario</th>
+						  <th class="span1">Aula</th>
+						  
+						  <th>Docente</th>
+					  </tr>
+				  </thead>   
+				  <tbody>
+															<tr>
+						<td>AA215</td>
+						<td class="center">E </td>
+						<td class="center">GEOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 10-12
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ROJAS LEON CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>AA215</td>
+						<td class="center">E </td>
+						<td class="center">GEOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 12-14
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ROJAS LEON CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>AA215</td>
+						<td class="center">F </td>
+						<td class="center">GEOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 16-18
+												</td>
+						<td class="center">D3-204</td>
+						
+						<td class="center">ROJAS LEON CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>AA215</td>
+						<td class="center">F </td>
+						<td class="center">GEOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 14-16
+												</td>
+						<td class="center">D3-204</td>
+						
+						<td class="center">ROJAS LEON CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>AA215</td>
+						<td class="center">G </td>
+						<td class="center">GEOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 17-19
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">ROJAS LEON CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>AA215</td>
+						<td class="center">G </td>
+						<td class="center">GEOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 10-12
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">ROJAS LEON CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>AA223</td>
+						<td class="center">F </td>
+						<td class="center">QUIMICA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 11-13
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">GARAY SIFUENTES,  JUAN DE DIOS</td>
+					</tr>
+										<tr>
+						<td>AA223</td>
+						<td class="center">F </td>
+						<td class="center">QUIMICA II</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												LU 11-14
+												</td>
+						<td class="center">LAB20/D2-271</td>
+						
+						<td class="center">GARAY SIFUENTES,  JUAN DE DIOS</td>
+					</tr>
+										<tr>
+						<td>AA223</td>
+						<td class="center">G </td>
+						<td class="center">QUIMICA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 11-13
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">CARRILLO HERNANDEZ, MIGUEL ANGEL</td>
+					</tr>
+										<tr>
+						<td>AA223</td>
+						<td class="center">G </td>
+						<td class="center">QUIMICA II</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												MA 8-11
+												</td>
+						<td class="center">LAB20/D4-309(A-4)</td>
+						
+						<td class="center">GARAY SIFUENTES,  JUAN DE DIOS</td>
+					</tr>
+										<tr>
+						<td>AA223</td>
+						<td class="center">J </td>
+						<td class="center">QUIMICA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 13-15
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">CHIRRE FLORES, JAQUELINE HEIDY</td>
+					</tr>
+										<tr>
+						<td>AA223</td>
+						<td class="center">J </td>
+						<td class="center">QUIMICA II</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												LU 8-11
+												</td>
+						<td class="center">LAB20/D2-261</td>
+						
+						<td class="center">CHIRRE FLORES, JAQUELINE HEIDY</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">E </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-17
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">CASTAÑEDA SALDAÑA,  FRANCISCA BEATRIZ</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">E </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 11-13
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">CASTAÑEDA SALDAÑA,  FRANCISCA BEATRIZ</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">F </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-11
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">ARANA LOPEZ,  SARA ADELINA</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">F </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">CC2 (D2-321)/D2-161</td>
+						
+						<td class="center">ARANA LOPEZ,  SARA ADELINA</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">G </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 8-11
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">CASTAÑEDA SALDAÑA,  FRANCISCA BEATRIZ</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">G </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">CASTAÑEDA SALDAÑA,  FRANCISCA BEATRIZ</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">I </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 11-14
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">ARANA LOPEZ,  SARA ADELINA</td>
+					</tr>
+										<tr>
+						<td>AA232</td>
+						<td class="center">I </td>
+						<td class="center">BIOESTADISTICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 11-13
+												</td>
+						<td class="center">CC2 (D2-321)/D4-309(A4)</td>
+						
+						<td class="center">ARANA LOPEZ,  SARA ADELINA</td>
+					</tr>
+										<tr>
+						<td>AA234</td>
+						<td class="center">E </td>
+						<td class="center">FISICA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 11-14
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>AA234</td>
+						<td class="center">E </td>
+						<td class="center">FISICA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 8-11
+												</td>
+						<td class="center">LC / 251</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>AA234</td>
+						<td class="center">F </td>
+						<td class="center">FISICA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-11
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>AA234</td>
+						<td class="center">F </td>
+						<td class="center">FISICA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 14-17
+												</td>
+						<td class="center">LC/D4-210(D4-C)</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>AA234</td>
+						<td class="center">G </td>
+						<td class="center">FISICA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">ASENCIOS ROJAS, JUNIOR DAVID</td>
+					</tr>
+										<tr>
+						<td>AA234</td>
+						<td class="center">G </td>
+						<td class="center">FISICA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 8-11
+												</td>
+						<td class="center">LC / D2-271</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>AA235</td>
+						<td class="center">E </td>
+						<td class="center">TOPOGRAFIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D4-309 A4</td>
+						
+						<td class="center">CACERES PEREZ, EVERT ROGER</td>
+					</tr>
+										<tr>
+						<td>AA235</td>
+						<td class="center">E </td>
+						<td class="center">TOPOGRAFIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 13-17
+												</td>
+						<td class="center">D4-309 A4</td>
+						
+						<td class="center">CACERES PEREZ, EVERT ROGER</td>
+					</tr>
+										<tr>
+						<td>AA237</td>
+						<td class="center">E </td>
+						<td class="center">DIBUJO TECNICO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 9-12
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">POLO TISNADO JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>AA237</td>
+						<td class="center">E </td>
+						<td class="center">DIBUJO TECNICO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-9
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">POLO TISNADO JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>AA237</td>
+						<td class="center">F </td>
+						<td class="center">DIBUJO TECNICO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 9-12
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">POLO TISNADO JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>AA237</td>
+						<td class="center">F </td>
+						<td class="center">DIBUJO TECNICO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-9
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">POLO TISNADO JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>AA238</td>
+						<td class="center">G </td>
+						<td class="center">DIBUJO CARTOGRAFICO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 14-15
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">AGUILAR ZAVALA, JUAN DAVID</td>
+					</tr>
+										<tr>
+						<td>AA238</td>
+						<td class="center">G </td>
+						<td class="center">DIBUJO CARTOGRAFICO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 15-18
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">AGUILAR ZAVALA, JUAN DAVID</td>
+					</tr>
+										<tr>
+						<td>AA238</td>
+						<td class="center">J </td>
+						<td class="center">DIBUJO CARTOGRAFICO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 17-20
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">AGUILAR ZAVALA, JUAN DAVID</td>
+					</tr>
+										<tr>
+						<td>AA238</td>
+						<td class="center">J </td>
+						<td class="center">DIBUJO CARTOGRAFICO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-17
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">AGUILAR ZAVALA, JUAN DAVID</td>
+					</tr>
+										<tr>
+						<td>AA241</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO MULTIVARIABLE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 11-14
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">TAZA CHAMBI,  GALINDO</td>
+					</tr>
+										<tr>
+						<td>AA241</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO MULTIVARIABLE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">TAZA CHAMBI,  GALINDO</td>
+					</tr>
+										<tr>
+						<td>AA241</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO MULTIVARIABLE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">CABRERA CHAVEZ, JULIO CESAR</td>
+					</tr>
+										<tr>
+						<td>AA241</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO MULTIVARIABLE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 10-13
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">CABRERA CHAVEZ, JULIO CESAR</td>
+					</tr>
+										<tr>
+						<td>AA241</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO MULTIVARIABLE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 10-13
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">CHULLUNCUY REYNOSO, AMERICO ANDRES</td>
+					</tr>
+										<tr>
+						<td>AA241</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO MULTIVARIABLE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">HUILLCA LEVA, PEDRO DAVID</td>
+					</tr>
+										<tr>
+						<td>AA243</td>
+						<td class="center">E </td>
+						<td class="center">FISICO-QUIMICA APLICADA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 8-11
+												</td>
+						<td class="center">L20/D2-161</td>
+						
+						<td class="center">YUPANQUI PORRAS,  BILMA AMPARO</td>
+					</tr>
+										<tr>
+						<td>AA243</td>
+						<td class="center">E </td>
+						<td class="center">FISICO-QUIMICA APLICADA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 15-17
+												</td>
+						<td class="center">D3-204(PETR)</td>
+						
+						<td class="center">YUPANQUI PORRAS,  BILMA AMPARO</td>
+					</tr>
+										<tr>
+						<td>AA243</td>
+						<td class="center">F </td>
+						<td class="center">FISICO-QUIMICA APLICADA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">CARRILLO HERNANDEZ, MIGUEL ANGEL</td>
+					</tr>
+										<tr>
+						<td>AA243</td>
+						<td class="center">F </td>
+						<td class="center">FISICO-QUIMICA APLICADA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 17-20
+												</td>
+						<td class="center">LAB-20/D3-204</td>
+						
+						<td class="center">CARRILLO HERNANDEZ, MIGUEL ANGEL</td>
+					</tr>
+										<tr>
+						<td>AA243</td>
+						<td class="center">G </td>
+						<td class="center">FISICO-QUIMICA APLICADA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 14-17
+												</td>
+						<td class="center">L20/D4-210(D4-C)</td>
+						
+						<td class="center">GARAY SIFUENTES,  JUAN DE DIOS</td>
+					</tr>
+										<tr>
+						<td>AA243</td>
+						<td class="center">G </td>
+						<td class="center">FISICO-QUIMICA APLICADA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">GARAY SIFUENTES,  JUAN DE DIOS</td>
+					</tr>
+										<tr>
+						<td>AA246</td>
+						<td class="center">G </td>
+						<td class="center">LENGUAJE DE PROGRAMACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 15-17
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">NAUPAY GUSUKUMA, ALVARO MIGUEL</td>
+					</tr>
+										<tr>
+						<td>AA246</td>
+						<td class="center">G </td>
+						<td class="center">LENGUAJE DE PROGRAMACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 12-14
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>AA246</td>
+						<td class="center">J </td>
+						<td class="center">LENGUAJE DE PROGRAMACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 17-19
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">NAUPAY GUSUKUMA, ALVARO MIGUEL</td>
+					</tr>
+										<tr>
+						<td>AA246</td>
+						<td class="center">J </td>
+						<td class="center">LENGUAJE DE PROGRAMACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 16-18
+												</td>
+						<td class="center">CC2(D2-321)</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>AA247</td>
+						<td class="center">G </td>
+						<td class="center">CARTOGRAFIA AUTOMATIZADA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 18-19
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">RUIZ TEJEDO, NAZARIO ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>AA247</td>
+						<td class="center">G </td>
+						<td class="center">CARTOGRAFIA AUTOMATIZADA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 19-22
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">RUIZ TEJEDO, NAZARIO ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>AHC35</td>
+						<td class="center">F </td>
+						<td class="center">PSICOLOGIA DE LA SEGURIDAD</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 9-12
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">CARRILLO PACHECO,  JAIME ERNESTO</td>
+					</tr>
+										<tr>
+						<td>AHC35</td>
+						<td class="center">F </td>
+						<td class="center">PSICOLOGIA DE LA SEGURIDAD</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-9
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">CARRILLO PACHECO,  JAIME ERNESTO</td>
+					</tr>
+										<tr>
+						<td>AHD85</td>
+						<td class="center">F </td>
+						<td class="center">INFORMES TECNICOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 15-17
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">BRINGAS MASGO,  CIRA RENEE</td>
+					</tr>
+										<tr>
+						<td>AHD85</td>
+						<td class="center">F </td>
+						<td class="center">INFORMES TECNICOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-15
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">BRINGAS MASGO,  CIRA RENEE</td>
+					</tr>
+										<tr>
+						<td>AHD93</td>
+						<td class="center">F </td>
+						<td class="center">LEGISLACION INDUSTRIAL, LABORAL Y TRIBUTARIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 16-17
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">LUNA TORRES DARWIN ALEXIS</td>
+					</tr>
+										<tr>
+						<td>AHD93</td>
+						<td class="center">F </td>
+						<td class="center">LEGISLACION INDUSTRIAL, LABORAL Y TRIBUTARIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 17-20
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">LUNA TORRES DARWIN ALEXIS</td>
+					</tr>
+										<tr>
+						<td>AHK05</td>
+						<td class="center">F </td>
+						<td class="center">RELACIONES HUMANAS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 9-12
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">CARRILLO PACHECO,  JAIME ERNESTO</td>
+					</tr>
+										<tr>
+						<td>AHK05</td>
+						<td class="center">F </td>
+						<td class="center">RELACIONES HUMANAS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 8-9
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">CARRILLO PACHECO,  JAIME ERNESTO</td>
+					</tr>
+										<tr>
+						<td>AHK15</td>
+						<td class="center">F </td>
+						<td class="center">LIDERAZGO Y NEGOCIACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 13-14
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">CARRILLO PACHECO,  JAIME ERNESTO</td>
+					</tr>
+										<tr>
+						<td>AHK15</td>
+						<td class="center">F </td>
+						<td class="center">LIDERAZGO Y NEGOCIACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 14-17
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">CARRILLO PACHECO,  JAIME ERNESTO</td>
+					</tr>
+										<tr>
+						<td>AHK15</td>
+						<td class="center">G </td>
+						<td class="center">LIDERAZGO Y NEGOCIACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-15
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">ETO CHERO, GUADALUPE PAULINA</td>
+					</tr>
+										<tr>
+						<td>AHK15</td>
+						<td class="center">G </td>
+						<td class="center">LIDERAZGO Y NEGOCIACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 15-18
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">ETO CHERO, GUADALUPE PAULINA</td>
+					</tr>
+										<tr>
+						<td>AS102</td>
+						<td class="center">F </td>
+						<td class="center">ANTROPOLOGIA SOCIO-CULTURAL Y AMBIENTE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 15-17
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>AS102</td>
+						<td class="center">F </td>
+						<td class="center">ANTROPOLOGIA SOCIO-CULTURAL Y AMBIENTE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 17-19
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>AS131</td>
+						<td class="center">G </td>
+						<td class="center">GESTION SOCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 9-11
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">RIVAS UNGARO, MARUJA</td>
+					</tr>
+										<tr>
+						<td>AS131</td>
+						<td class="center">G </td>
+						<td class="center">GESTION SOCIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 11-13
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">RIVAS UNGARO, MARUJA</td>
+					</tr>
+										<tr>
+						<td>AS133</td>
+						<td class="center">G </td>
+						<td class="center">CONFLICTOS SOCIOAMBIENTALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-16
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">ETO CHERO, GUADALUPE PAULINA</td>
+					</tr>
+										<tr>
+						<td>AS133</td>
+						<td class="center">G </td>
+						<td class="center">CONFLICTOS SOCIOAMBIENTALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 16-18
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">ETO CHERO, GUADALUPE PAULINA</td>
+					</tr>
+										<tr>
+						<td>AS141</td>
+						<td class="center">F </td>
+						<td class="center">LENGUA Y COMUNICACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 14-15
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>AS141</td>
+						<td class="center">F </td>
+						<td class="center">LENGUA Y COMUNICACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 15-17
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>AS152</td>
+						<td class="center">G </td>
+						<td class="center">DERECHO AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">NEYRA CRUZADO, CESAR ABRAHAM</td>
+					</tr>
+										<tr>
+						<td>AS152</td>
+						<td class="center">G </td>
+						<td class="center">DERECHO AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 10-12
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">NEYRA CRUZADO, CESAR ABRAHAM</td>
+					</tr>
+										<tr>
+						<td>AS163</td>
+						<td class="center">G </td>
+						<td class="center">SOCIOLOGIA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 9-10
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">RIVAS UNGARO, MARUJA</td>
+					</tr>
+										<tr>
+						<td>AS163</td>
+						<td class="center">G </td>
+						<td class="center">SOCIOLOGIA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 10-13
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">RIVAS UNGARO, MARUJA</td>
+					</tr>
+										<tr>
+						<td>AS920</td>
+						<td class="center">E </td>
+						<td class="center">APROVECHAMIENTO DE RECURSOS HIDRICOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 14-16
+												</td>
+						<td class="center">D4-311(A5) / VIRTUAL</td>
+						
+						<td class="center">SALAZAR GAVELAN, ROGER EDMUNDO</td>
+					</tr>
+										<tr>
+						<td>AS920</td>
+						<td class="center">E </td>
+						<td class="center">APROVECHAMIENTO DE RECURSOS HIDRICOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-21
+												</td>
+						<td class="center">D4-311(A5) / VIRTUAL</td>
+						
+						<td class="center">SALAZAR GAVELAN, ROGER EDMUNDO</td>
+					</tr>
+										<tr>
+						<td>BEF01</td>
+						<td class="center">E </td>
+						<td class="center">ETICA Y FILOSOFIA POLITICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-9
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">VILLANUEVA BENAVIDES, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>BEF01</td>
+						<td class="center">E </td>
+						<td class="center">ETICA Y FILOSOFIA POLITICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 9-11
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">VILLANUEVA BENAVIDES, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>BEF01</td>
+						<td class="center">F </td>
+						<td class="center">ETICA Y FILOSOFIA POLITICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>BEF01</td>
+						<td class="center">F </td>
+						<td class="center">ETICA Y FILOSOFIA POLITICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 15-16
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>BEF01</td>
+						<td class="center">G </td>
+						<td class="center">ETICA Y FILOSOFIA POLITICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 15-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>BEF01</td>
+						<td class="center">G </td>
+						<td class="center">ETICA Y FILOSOFIA POLITICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">E </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 14-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">E </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 11-13
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">F </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">F </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 11-13
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">G </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 10-12
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">AUBERT CARDENAS, LUCIA RUTH</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">G </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-10
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">AUBERT CARDENAS, LUCIA RUTH</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">H </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 11-13
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">H </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">I </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BEG01</td>
+						<td class="center">I </td>
+						<td class="center">ECONOMIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 11-13
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CUETO BURNEO, JOSE ADOLFO</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">E </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">E </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 12-15
+												</td>
+						<td class="center">D4-208(D4-D)/LC</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">E </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">F </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												MI 13-16
+												</td>
+						<td class="center">LC/251</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">F </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">F </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 9-11
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">LA ROSA TRINIDAD, DOMINGO MANUEL</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">G </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 17-19
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">G </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 15-18
+												</td>
+						<td class="center">LABC/D2-251</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>BFI01</td>
+						<td class="center">G </td>
+						<td class="center">FISICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-16
+												</td>
+						<td class="center">D3-204</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">E </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 14-15
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">NAUPAY GUSUKUMA, ALVARO MIGUEL</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">E </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 15-17
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">NAUPAY GUSUKUMA, ALVARO MIGUEL</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">F </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-15
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">F </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 15-17
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">G </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 15-17
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">G </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-15
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">H </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 14-15
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>BIC01</td>
+						<td class="center">H </td>
+						<td class="center">INTRODUCCION A LA COMPUTACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 15-17
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">HUAMAN VERA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 11-13
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">VALVERDE CALDERON,  ADRIANA</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 8-10
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">VALVERDE CALDERON,  ADRIANA</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">VALVERDE CALDERON,  ADRIANA</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 8-10
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">SIMON TACURI, MARGOTH</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 10-12
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">SIMON TACURI, MARGOTH</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">SIMON TACURI, MARGOTH</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 8-10
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 10-12
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">J </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 8-10
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">CABRERA CHAVEZ, JULIO CESAR</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">J </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 13-15
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA01</td>
+						<td class="center">J </td>
+						<td class="center">CALCULO DIFERENCIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 15-17
+												</td>
+						<td class="center">D4-A(D4-110)</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">ALVARADO JARAMILLO, LUIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-10
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">ALVARADO JARAMILLO, LUIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">E </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-16
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">ALVARADO JARAMILLO, LUIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">SIMON TACURI, MARGOTH</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 10-12
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">SIMON TACURI, MARGOTH</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">F </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-16
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">SIMON TACURI, MARGOTH</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 13-15
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">G </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">HERRERA VEGA, HECTOR ALEXIS</td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">H </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-10
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">H </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 12-14
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>BMA02</td>
+						<td class="center">H </td>
+						<td class="center">CALCULO INTEGRAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">E </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">CABRERA CHAVEZ, JULIO CESAR</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">E </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-17
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">CABRERA CHAVEZ, JULIO CESAR</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">F </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">HUILLCA LEVA, PEDRO DAVID</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">F </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-11
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">HUILLCA LEVA, PEDRO DAVID</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">G </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">ALVARADO JARAMILLO, LUIS</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">G </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-11
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ALVARADO JARAMILLO, LUIS</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">H </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 10-13
+												</td>
+						<td class="center">D4-A(D4-110)</td>
+						
+						<td class="center">SULCA CHIPANA, JORGE JOEL</td>
+					</tr>
+										<tr>
+						<td>BMA03</td>
+						<td class="center">H </td>
+						<td class="center">ALGEBRA LINEAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">SULCA CHIPANA, JORGE JOEL</td>
+					</tr>
+										<tr>
+						<td>BO122</td>
+						<td class="center">F </td>
+						<td class="center">MICROBIOLOGIA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 8-10
+												</td>
+						<td class="center">LAB22 / D4-211(A2)</td>
+						
+						<td class="center">MARTINEZ VILA ALVARO MARTÍN</td>
+					</tr>
+										<tr>
+						<td>BO122</td>
+						<td class="center">F </td>
+						<td class="center">MICROBIOLOGIA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">MARTINEZ VILA ALVARO MARTÍN</td>
+					</tr>
+										<tr>
+						<td>BO123</td>
+						<td class="center">G </td>
+						<td class="center">MICROBIOLOGIA Y AMBIENTE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 9-11
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">SÁNCHEZ TORRES, HEIDI ISABEL</td>
+					</tr>
+										<tr>
+						<td>BO123</td>
+						<td class="center">G </td>
+						<td class="center">MICROBIOLOGIA Y AMBIENTE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 11-13
+												</td>
+						<td class="center">A2/LAB22</td>
+						
+						<td class="center">SÁNCHEZ TORRES, HEIDI ISABEL</td>
+					</tr>
+										<tr>
+						<td>BO142</td>
+						<td class="center">G </td>
+						<td class="center">ECOTOXICOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">MARRUFO SALDAÑA, LILIANA</td>
+					</tr>
+										<tr>
+						<td>BO142</td>
+						<td class="center">G </td>
+						<td class="center">ECOTOXICOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">MARRUFO SALDAÑA, LILIANA</td>
+					</tr>
+										<tr>
+						<td>BO151</td>
+						<td class="center">G </td>
+						<td class="center">BIOTECNOLOGIA Y AMBIENTE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 9-11
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">SÁNCHEZ TORRES, HEIDI ISABEL</td>
+					</tr>
+										<tr>
+						<td>BO151</td>
+						<td class="center">G </td>
+						<td class="center">BIOTECNOLOGIA Y AMBIENTE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">RAMOS MATÍAS, PEDRO MELITÓN</td>
+					</tr>
+										<tr>
+						<td>BO152</td>
+						<td class="center">G </td>
+						<td class="center">MANEJO AMBIENTAL DE LA BIODIVERSIDAD</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 13-16
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">RAMOS MATÍAS, PEDRO MELITÓN</td>
+					</tr>
+										<tr>
+						<td>BO152</td>
+						<td class="center">G </td>
+						<td class="center">MANEJO AMBIENTAL DE LA BIODIVERSIDAD</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 14-16
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">RAMOS MATÍAS, PEDRO MELITÓN</td>
+					</tr>
+										<tr>
+						<td>BO154</td>
+						<td class="center">G </td>
+						<td class="center">BIORREMEDIACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">MARIN HUACHACA, NELIDA SIMONA</td>
+					</tr>
+										<tr>
+						<td>BO154</td>
+						<td class="center">G </td>
+						<td class="center">BIORREMEDIACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">MARIN HUACHACA, NELIDA SIMONA</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">E </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">E </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-10
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">E </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 10-12
+												</td>
+						<td class="center">LAB20/D2-271</td>
+						
+						<td class="center">YUPANQUI PORRAS,  BILMA AMPARO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">F </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">CHIRRE FLORES, JAQUELINE HEIDY</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">F </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 15-17
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">CHIRRE FLORES, JAQUELINE HEIDY</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">F </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">LAB20 /D3-204</td>
+						
+						<td class="center">CHIRRE FLORES, JAQUELINE HEIDY</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">G </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">G </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 11-13
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">G </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">LAB20/D4-208(D4-D)</td>
+						
+						<td class="center">YUPANQUI PORRAS,  BILMA AMPARO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">H </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">H </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-10
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">H </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												MA 15-17
+												</td>
+						<td class="center">LAB20 /D3-204</td>
+						
+						<td class="center">YUPANQUI PORRAS,  BILMA AMPARO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">J </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 12-14
+												</td>
+						<td class="center">LAB20/D2-271</td>
+						
+						<td class="center">CARRILLO HERNANDEZ, MIGUEL ANGEL</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">J </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 11-13
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BQU01</td>
+						<td class="center">J </td>
+						<td class="center">QUIMICA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>BRC01</td>
+						<td class="center">E </td>
+						<td class="center">REDACCION Y COMUNICACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-9
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">ROMERO CENTENO, ROMULO CRESENCIANO</td>
+					</tr>
+										<tr>
+						<td>BRC01</td>
+						<td class="center">E </td>
+						<td class="center">REDACCION Y COMUNICACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 9-11
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">ROMERO CENTENO, ROMULO CRESENCIANO</td>
+					</tr>
+										<tr>
+						<td>BRC01</td>
+						<td class="center">F </td>
+						<td class="center">REDACCION Y COMUNICACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 14-15
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">ROMERO CENTENO, ROMULO CRESENCIANO</td>
+					</tr>
+										<tr>
+						<td>BRC01</td>
+						<td class="center">F </td>
+						<td class="center">REDACCION Y COMUNICACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 15-17
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">ROMERO CENTENO, ROMULO CRESENCIANO</td>
+					</tr>
+										<tr>
+						<td>BRC01</td>
+						<td class="center">G </td>
+						<td class="center">REDACCION Y COMUNICACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 11-12
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>BRC01</td>
+						<td class="center">G </td>
+						<td class="center">REDACCION Y COMUNICACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 12-14
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">GONZALEZ MADUEÑO, CONSUELO</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">E </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">VILLANUEVA BENAVIDES, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">E </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 12-14
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">VILLANUEVA BENAVIDES, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">F </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 13-15
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">PANTIGOZO LOAIZA,  MARCO HERNAN</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">F </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 15-17
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">PANTIGOZO LOAIZA,  MARCO HERNAN</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">G </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-10
+												</td>
+						<td class="center">D3-204(PETR)</td>
+						
+						<td class="center">VILLANUEVA BENAVIDES, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">G </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 10-12
+												</td>
+						<td class="center">D3-204(PETR)</td>
+						
+						<td class="center">VILLANUEVA BENAVIDES, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">J </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-10
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">AUBERT CARDENAS, LUCIA RUTH</td>
+					</tr>
+										<tr>
+						<td>BRN01</td>
+						<td class="center">J </td>
+						<td class="center">REALIDAD NACIONAL, CONSTITUCION Y DERECHOS HUMANOS-        </td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 10-12
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">AUBERT CARDENAS, LUCIA RUTH</td>
+					</tr>
+										<tr>
+						<td>DS111</td>
+						<td class="center">F </td>
+						<td class="center">GEOMETRIA DESCRIPTIVA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">AGUILAR ZAVALA, JUAN DAVID</td>
+					</tr>
+										<tr>
+						<td>DS111</td>
+						<td class="center">F </td>
+						<td class="center">GEOMETRIA DESCRIPTIVA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">AGUILAR ZAVALA, JUAN DAVID</td>
+					</tr>
+										<tr>
+						<td>EC115</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DEL CUERPO RIGIDO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-19
+												</td>
+						<td class="center">SUM</td>
+						
+						<td class="center">BURGOS NAMUCHE MARIBEL</td>
+					</tr>
+										<tr>
+						<td>EC115</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DEL CUERPO RIGIDO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 16-18
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">CASADO MARQUEZ JOSE MARTIN</td>
+					</tr>
+										<tr>
+						<td>EC125</td>
+						<td class="center">E </td>
+						<td class="center">RESISTENCIA DE MATERIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 9-13
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">SANCHEZ LLATAS, MARIA ESTHER</td>
+					</tr>
+										<tr>
+						<td>EC125</td>
+						<td class="center">E </td>
+						<td class="center">RESISTENCIA DE MATERIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CASADO MARQUEZ JOSE MARTIN</td>
+					</tr>
+										<tr>
+						<td>EC222</td>
+						<td class="center">F </td>
+						<td class="center">MECANICA DE MATERIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 10-13
+												</td>
+						<td class="center">D4-311 (A5)</td>
+						
+						<td class="center">SANTOS TELLO,  WILLIAM CESAR</td>
+					</tr>
+										<tr>
+						<td>EC222</td>
+						<td class="center">F </td>
+						<td class="center">MECANICA DE MATERIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 10-12
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">SANTOS TELLO,  WILLIAM CESAR</td>
+					</tr>
+										<tr>
+						<td>EC411</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS Y DISEÑO DE ESTRUCTURAS HIDRAULICAS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">GIBU YAGUE, PATRICIA ISABEL</td>
+					</tr>
+										<tr>
+						<td>EC411</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS Y DISEÑO DE ESTRUCTURAS HIDRAULICAS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">GIBU YAGUE, PATRICIA ISABEL</td>
+					</tr>
+										<tr>
+						<td>EC411</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS Y DISEÑO DE ESTRUCTURAS HIDRAULICAS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">GIBU YAGUE, PATRICIA ISABEL</td>
+					</tr>
+										<tr>
+						<td>EC611</td>
+						<td class="center">E </td>
+						<td class="center">TECNOLOGIA DE MATERIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 19-22
+												</td>
+						<td class="center">D4-208(D4-D)/LC</td>
+						
+						<td class="center">SIFUENTES ORTECHO, JUAN MANUEL</td>
+					</tr>
+										<tr>
+						<td>EC611</td>
+						<td class="center">E </td>
+						<td class="center">TECNOLOGIA DE MATERIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">SIFUENTES ORTECHO, JUAN MANUEL</td>
+					</tr>
+										<tr>
+						<td>EC717</td>
+						<td class="center">E </td>
+						<td class="center">PROCEDIMIENTOS DE CONSTRUCCION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 19-22
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">SIFUENTES ORTECHO, JUAN MANUEL</td>
+					</tr>
+										<tr>
+						<td>EC717</td>
+						<td class="center">E </td>
+						<td class="center">PROCEDIMIENTOS DE CONSTRUCCION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">SIFUENTES ORTECHO, JUAN MANUEL</td>
+					</tr>
+										<tr>
+						<td>EC717</td>
+						<td class="center">H </td>
+						<td class="center">PROCEDIMIENTOS DE CONSTRUCCION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 19-22
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">SIFUENTES ORTECHO, JUAN MANUEL</td>
+					</tr>
+										<tr>
+						<td>EC717</td>
+						<td class="center">H </td>
+						<td class="center">PROCEDIMIENTOS DE CONSTRUCCION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">SIFUENTES ORTECHO, JUAN MANUEL</td>
+					</tr>
+										<tr>
+						<td>EE342</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES ELECTRICAS INTERIORES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 9-11
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">ROSADO AGUIRRE, ESTANISLAO UBALDO</td>
+					</tr>
+										<tr>
+						<td>EE342</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES ELECTRICAS INTERIORES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 11-13
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">ROSADO AGUIRRE, ESTANISLAO UBALDO</td>
+					</tr>
+										<tr>
+						<td>EE344</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA DE ILUMINACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D3-309 POSGRADO</td>
+						
+						<td class="center">SAAVEDRA FARFAN,  BLAS ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>EE344</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA DE ILUMINACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D3-309 POSGRADO</td>
+						
+						<td class="center">SAAVEDRA FARFAN,  BLAS ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>EE631</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES ELECTRICAS Y AUTOMATIZACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 8-10
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">ROSADO AGUIRRE, ESTANISLAO UBALDO</td>
+					</tr>
+										<tr>
+						<td>EE631</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES ELECTRICAS Y AUTOMATIZACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 10-12
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">ROSADO AGUIRRE, ESTANISLAO UBALDO</td>
+					</tr>
+										<tr>
+						<td>EP305</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA ECONOMICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">COLLAZOS BELTRÁN  JORGE IVAN</td>
+					</tr>
+										<tr>
+						<td>EP305</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA ECONOMICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">COLLAZOS BELTRÁN  JORGE IVAN</td>
+					</tr>
+										<tr>
+						<td>FI413</td>
+						<td class="center">E </td>
+						<td class="center">FISICA III</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">VARAS ROJAS,  OSCAR HERNAN</td>
+					</tr>
+										<tr>
+						<td>FI413</td>
+						<td class="center">E </td>
+						<td class="center">FISICA III</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 17-20
+												</td>
+						<td class="center">LC/D4-210(D4-C)</td>
+						
+						<td class="center">VARAS ROJAS,  OSCAR HERNAN</td>
+					</tr>
+										<tr>
+						<td>FI413</td>
+						<td class="center">F </td>
+						<td class="center">FISICA III</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 11-14
+												</td>
+						<td class="center">D4-110(D4-A)/LCC</td>
+						
+						<td class="center">MENDOZA ROJAS, DAYGORD</td>
+					</tr>
+										<tr>
+						<td>FI413</td>
+						<td class="center">F </td>
+						<td class="center">FISICA III</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 17-19
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">VARAS ROJAS,  OSCAR HERNAN</td>
+					</tr>
+										<tr>
+						<td>FI413</td>
+						<td class="center">G </td>
+						<td class="center">FISICA III</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">VARAS ROJAS,  OSCAR HERNAN</td>
+					</tr>
+										<tr>
+						<td>FI413</td>
+						<td class="center">G </td>
+						<td class="center">FISICA III</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 14-17
+												</td>
+						<td class="center">D2-161/LC</td>
+						
+						<td class="center">VARAS ROJAS,  OSCAR HERNAN</td>
+					</tr>
+										<tr>
+						<td>FS145</td>
+						<td class="center">F </td>
+						<td class="center">TERMODINAMICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 13-16
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">SANTOS TELLO,  WILLIAM CESAR</td>
+					</tr>
+										<tr>
+						<td>FS145</td>
+						<td class="center">F </td>
+						<td class="center">TERMODINAMICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">SANTOS TELLO,  WILLIAM CESAR</td>
+					</tr>
+										<tr>
+						<td>FS148</td>
+						<td class="center">G </td>
+						<td class="center">TERMODINAMICA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 17-20
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">BEJARANO GRÁNDEZ, OMAR</td>
+					</tr>
+										<tr>
+						<td>FS148</td>
+						<td class="center">G </td>
+						<td class="center">TERMODINAMICA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 20-22
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">BEJARANO GRÁNDEZ, OMAR</td>
+					</tr>
+										<tr>
+						<td>FS160</td>
+						<td class="center">F </td>
+						<td class="center">TECNOLOGIA DE MATERIALES DE SEGURIDAD</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												MA 9-12
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">BRINGAS MASGO,  CIRA RENEE</td>
+					</tr>
+										<tr>
+						<td>FS160</td>
+						<td class="center">F </td>
+						<td class="center">TECNOLOGIA DE MATERIALES DE SEGURIDAD</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 17-19
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">VILLENA CHAVEZ,  JORGE ALBERTO</td>
+					</tr>
+										<tr>
+						<td>FS160</td>
+						<td class="center">F </td>
+						<td class="center">TECNOLOGIA DE MATERIALES DE SEGURIDAD</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 8-9
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">BRINGAS MASGO,  CIRA RENEE</td>
+					</tr>
+										<tr>
+						<td>GA111</td>
+						<td class="center">G </td>
+						<td class="center">ENERGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">POSGRADO</td>
+						
+						<td class="center">NAHUI ORTIZ, JOHNNY PRUDENCIO</td>
+					</tr>
+										<tr>
+						<td>GA111</td>
+						<td class="center">G </td>
+						<td class="center">ENERGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">NAHUI ORTIZ, JOHNNY PRUDENCIO</td>
+					</tr>
+										<tr>
+						<td>GA115</td>
+						<td class="center">G </td>
+						<td class="center">PAISAJISMO Y SERVICIOS AMBIENTALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-17
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">ALIAGA MARTINEZ, MARÍA PAULINA</td>
+					</tr>
+										<tr>
+						<td>GA115</td>
+						<td class="center">G </td>
+						<td class="center">PAISAJISMO Y SERVICIOS AMBIENTALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 17-20
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">ALIAGA MARTINEZ, MARÍA PAULINA</td>
+					</tr>
+										<tr>
+						<td>GA133</td>
+						<td class="center">F </td>
+						<td class="center">GESTION Y CONTROL DE MATERIALES PELIGROSOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 10-12
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">MONTESINOS ECHENIQUE ÁNGEL RAÚL</td>
+					</tr>
+										<tr>
+						<td>GA133</td>
+						<td class="center">F </td>
+						<td class="center">GESTION Y CONTROL DE MATERIALES PELIGROSOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">MONTESINOS ECHENIQUE ÁNGEL RAÚL</td>
+					</tr>
+										<tr>
+						<td>GA135</td>
+						<td class="center">F </td>
+						<td class="center">GESTION DE DESASTRES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">HERNANDEZ CARRILLO,  MARIA JESUS</td>
+					</tr>
+										<tr>
+						<td>GA135</td>
+						<td class="center">F </td>
+						<td class="center">GESTION DE DESASTRES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">HERNANDEZ CARRILLO,  MARIA JESUS</td>
+					</tr>
+										<tr>
+						<td>GA135</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE DESASTRES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">RODRIGUEZ VILLANUEVA, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>GA135</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE DESASTRES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">RODRIGUEZ VILLANUEVA, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>GA136</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE CONTAMINACION SONORA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 20-22
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">MAMANI HERRERA,  BLANCA MERCEDES</td>
+					</tr>
+										<tr>
+						<td>GA136</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE CONTAMINACION SONORA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">MAMANI HERRERA,  BLANCA MERCEDES</td>
+					</tr>
+										<tr>
+						<td>GA137</td>
+						<td class="center">G </td>
+						<td class="center">VALORACION ECONOMICA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 17-18
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">COLLAZOS CERRÓN, JESÚS NEMESIO</td>
+					</tr>
+										<tr>
+						<td>GA137</td>
+						<td class="center">G </td>
+						<td class="center">VALORACION ECONOMICA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 18-21
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">COLLAZOS CERRÓN, JESÚS NEMESIO</td>
+					</tr>
+										<tr>
+						<td>GA140</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA DE RECURSOS HIDRICOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 14-16
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">NOLASCO SEGURA, CLARK HUGO</td>
+					</tr>
+										<tr>
+						<td>GA140</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA DE RECURSOS HIDRICOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 16-18
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">NOLASCO SEGURA, CLARK HUGO</td>
+					</tr>
+										<tr>
+						<td>GA144</td>
+						<td class="center">E </td>
+						<td class="center">INGENIERIA DE RESIDUOS SOLIDOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CERRON PALOMINO, MARCO ALBERTO</td>
+					</tr>
+										<tr>
+						<td>GA144</td>
+						<td class="center">E </td>
+						<td class="center">INGENIERIA DE RESIDUOS SOLIDOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">CERRON PALOMINO, MARCO ALBERTO</td>
+					</tr>
+										<tr>
+						<td>GA152</td>
+						<td class="center">G </td>
+						<td class="center">SISTEMAS DE INFORMACION GEOGRAFICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 13-15
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">RUIZ TEJEDO, NAZARIO ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>GA152</td>
+						<td class="center">G </td>
+						<td class="center">SISTEMAS DE INFORMACION GEOGRAFICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 15-17
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">RUIZ TEJEDO, NAZARIO ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>GA155</td>
+						<td class="center">G </td>
+						<td class="center">ORDENAMIENTO TERRITORIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 17-19
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">VELASQUEZ HUAMANI, JOSE WENDER</td>
+					</tr>
+										<tr>
+						<td>GA155</td>
+						<td class="center">G </td>
+						<td class="center">ORDENAMIENTO TERRITORIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">VELASQUEZ HUAMANI, JOSE WENDER</td>
+					</tr>
+										<tr>
+						<td>GA158</td>
+						<td class="center">G </td>
+						<td class="center">SIMULACION Y MODELAMIENTO AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">PINCHE LAURRE, CRISTÓBAL</td>
+					</tr>
+										<tr>
+						<td>GA158</td>
+						<td class="center">G </td>
+						<td class="center">SIMULACION Y MODELAMIENTO AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 10-12
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">PINCHE LAURRE, CRISTÓBAL</td>
+					</tr>
+										<tr>
+						<td>GA159</td>
+						<td class="center">G </td>
+						<td class="center">VIGILANCIA Y MONITOREO DEL AMBIENTE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 18-20
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>GA159</td>
+						<td class="center">G </td>
+						<td class="center">VIGILANCIA Y MONITOREO DEL AMBIENTE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 20-22
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>GA163</td>
+						<td class="center">F </td>
+						<td class="center">INNOVACION Y TESIS 1</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>GA163</td>
+						<td class="center">F </td>
+						<td class="center">INNOVACION Y TESIS 1</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 17-19
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>GA167</td>
+						<td class="center">G </td>
+						<td class="center">TRATAMIENTO DE EFLUENTES DOMESTICOS E INDUSTRIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 17-19
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">QUIROZ MANTARI, MIGUEL ANTONIO</td>
+					</tr>
+										<tr>
+						<td>GA167</td>
+						<td class="center">G </td>
+						<td class="center">TRATAMIENTO DE EFLUENTES DOMESTICOS E INDUSTRIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 19-21
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">QUIROZ MANTARI, MIGUEL ANTONIO</td>
+					</tr>
+										<tr>
+						<td>GA172</td>
+						<td class="center">G </td>
+						<td class="center">SISTEMAS DE GESTION AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>GA172</td>
+						<td class="center">G </td>
+						<td class="center">SISTEMAS DE GESTION AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>GA173</td>
+						<td class="center">G </td>
+						<td class="center">DISEÑO EXPERIMENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 14-15
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ALIAGA MARTINEZ, MARÍA PAULINA</td>
+					</tr>
+										<tr>
+						<td>GA173</td>
+						<td class="center">G </td>
+						<td class="center">DISEÑO EXPERIMENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 15-18
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ALIAGA MARTINEZ, MARÍA PAULINA</td>
+					</tr>
+										<tr>
+						<td>GA175</td>
+						<td class="center">G </td>
+						<td class="center">HUELLA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 14-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>GA175</td>
+						<td class="center">G </td>
+						<td class="center">HUELLA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 16-18
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>GA177</td>
+						<td class="center">G </td>
+						<td class="center">FISCALIZACION Y AUDITORIA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">MIRANDA ANTÓN, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>GA177</td>
+						<td class="center">G </td>
+						<td class="center">FISCALIZACION Y AUDITORIA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">MIRANDA ANTÓN, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>GA178</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE LA CALIDAD</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 14-16
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">MARTEL JAVIER, EDWIN ANTONIO</td>
+					</tr>
+										<tr>
+						<td>GA178</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE LA CALIDAD</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 16-18
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">MARTEL JAVIER, EDWIN ANTONIO</td>
+					</tr>
+										<tr>
+						<td>GA181</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA AMBIENTAL ENERGETICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">NAHUI ORTIZ, JOHNNY PRUDENCIO</td>
+					</tr>
+										<tr>
+						<td>GA181</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA AMBIENTAL ENERGETICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">NAHUI ORTIZ, JOHNNY PRUDENCIO</td>
+					</tr>
+										<tr>
+						<td>GA191</td>
+						<td class="center">G </td>
+						<td class="center">TALLER DE PROYECTO DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 17-19
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">MARIN HUACHACA, NELIDA SIMONA</td>
+					</tr>
+										<tr>
+						<td>GA191</td>
+						<td class="center">G </td>
+						<td class="center">TALLER DE PROYECTO DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 19-21
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">MARIN HUACHACA, NELIDA SIMONA</td>
+					</tr>
+										<tr>
+						<td>GA191</td>
+						<td class="center">J </td>
+						<td class="center">TALLER DE PROYECTO DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHIRINOS COLLANTES, HUGO DAVID</td>
+					</tr>
+										<tr>
+						<td>GA191</td>
+						<td class="center">J </td>
+						<td class="center">TALLER DE PROYECTO DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHIRINOS COLLANTES, HUGO DAVID</td>
+					</tr>
+										<tr>
+						<td>GA192</td>
+						<td class="center">G </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-20
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">RUIZ TEJEDO, NAZARIO ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>GA192</td>
+						<td class="center">G </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 20-22
+												</td>
+						<td class="center">CC1</td>
+						
+						<td class="center">RUIZ TEJEDO, NAZARIO ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>GA192</td>
+						<td class="center">J </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-20
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">REQUENA SANCHEZ, NORVIN PLUMIEER</td>
+					</tr>
+										<tr>
+						<td>GA192</td>
+						<td class="center">J </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 20-22
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">REQUENA SANCHEZ, NORVIN PLUMIEER</td>
+					</tr>
+										<tr>
+						<td>GE102</td>
+						<td class="center">G </td>
+						<td class="center">GEOGRAFIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">VELASQUEZ HUAMANI, JOSE WENDER</td>
+					</tr>
+										<tr>
+						<td>GE102</td>
+						<td class="center">G </td>
+						<td class="center">GEOGRAFIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 11-13
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">VELASQUEZ HUAMANI, JOSE WENDER</td>
+					</tr>
+										<tr>
+						<td>GE111</td>
+						<td class="center">G </td>
+						<td class="center">EDAFOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D4-C</td>
+						
+						<td class="center">QUISPE OJEDA, TEODOSIO CELSO</td>
+					</tr>
+										<tr>
+						<td>GE111</td>
+						<td class="center">G </td>
+						<td class="center">EDAFOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">D4-C</td>
+						
+						<td class="center">QUISPE OJEDA, TEODOSIO CELSO</td>
+					</tr>
+										<tr>
+						<td>GE121</td>
+						<td class="center">G </td>
+						<td class="center">HIDROGEOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 9-11
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">ALVA HUAPAYA, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>GE121</td>
+						<td class="center">G </td>
+						<td class="center">HIDROGEOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 11-13
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">ALVA HUAPAYA, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>GE122</td>
+						<td class="center">G </td>
+						<td class="center">CONTAMINACION DEL SUELO Y TECNICAS DE CONTROL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 10-12
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">QUISPE OJEDA, TEODOSIO CELSO</td>
+					</tr>
+										<tr>
+						<td>GE122</td>
+						<td class="center">G </td>
+						<td class="center">CONTAMINACION DEL SUELO Y TECNICAS DE CONTROL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">QUISPE OJEDA, TEODOSIO CELSO</td>
+					</tr>
+										<tr>
+						<td>GE131</td>
+						<td class="center">G </td>
+						<td class="center">CONTAMINACION Y MODELAMIENTO HIDROLOGICO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">RODRIGUEZ VILLANUEVA, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>GE131</td>
+						<td class="center">G </td>
+						<td class="center">CONTAMINACION Y MODELAMIENTO HIDROLOGICO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">RODRIGUEZ VILLANUEVA, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>GE133</td>
+						<td class="center">G </td>
+						<td class="center">CONTROL DE DESERTIFICACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 9-11
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">QUISPE OJEDA, TEODOSIO CELSO</td>
+					</tr>
+										<tr>
+						<td>GE133</td>
+						<td class="center">G </td>
+						<td class="center">CONTROL DE DESERTIFICACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 11-13
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">QUISPE OJEDA, TEODOSIO CELSO</td>
+					</tr>
+										<tr>
+						<td>GI120</td>
+						<td class="center">F </td>
+						<td class="center">GESTION ECONOMICO-FINANCIERA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 13-14
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">COLLAZOS BELTRÁN  JORGE IVAN</td>
+					</tr>
+										<tr>
+						<td>GI120</td>
+						<td class="center">F </td>
+						<td class="center">GESTION ECONOMICO-FINANCIERA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 14-16
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">COLLAZOS BELTRÁN  JORGE IVAN</td>
+					</tr>
+										<tr>
+						<td>HH113</td>
+						<td class="center">E </td>
+						<td class="center">HIDROLOGIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 15-17
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">MARTEL JAVIER EDWIN ANTONIO</td>
+					</tr>
+										<tr>
+						<td>HH114</td>
+						<td class="center">E </td>
+						<td class="center">HIDROLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 15-17
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">MARTEL JAVIER EDWIN ANTONIO</td>
+					</tr>
+										<tr>
+						<td>HH123</td>
+						<td class="center">G </td>
+						<td class="center">HIDROLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 9-11
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">MARTEL JAVIER, EDWIN ANTONIO</td>
+					</tr>
+										<tr>
+						<td>HH123</td>
+						<td class="center">G </td>
+						<td class="center">HIDROLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 11-13
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">MARTEL JAVIER, EDWIN ANTONIO</td>
+					</tr>
+										<tr>
+						<td>HH221</td>
+						<td class="center">F </td>
+						<td class="center">DINAMICA DE FLUIDOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 9-12
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">SANTOS TELLO,  WILLIAM CESAR</td>
+					</tr>
+										<tr>
+						<td>HH221</td>
+						<td class="center">F </td>
+						<td class="center">DINAMICA DE FLUIDOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 8-9
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">SANTOS TELLO,  WILLIAM CESAR</td>
+					</tr>
+										<tr>
+						<td>HH223</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DE FLUIDOS I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 8-11
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHAVEZ ZEGARRA, FERNANDO JAVIER</td>
+					</tr>
+										<tr>
+						<td>HH223</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DE FLUIDOS I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 18-19
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHAVEZ ZEGARRA, FERNANDO JAVIER</td>
+					</tr>
+										<tr>
+						<td>HH223</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DE FLUIDOS I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 19-20
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHAVEZ ZEGARRA, FERNANDO JAVIER</td>
+					</tr>
+										<tr>
+						<td>HH224</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DE FLUIDOS II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-11
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ACRUTA SANCHEZ, ALFREDO</td>
+					</tr>
+										<tr>
+						<td>HH224</td>
+						<td class="center">E </td>
+						<td class="center">MECANICA DE FLUIDOS II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 11-13
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ACRUTA SANCHEZ, ALFREDO</td>
+					</tr>
+										<tr>
+						<td>HH231</td>
+						<td class="center">G </td>
+						<td class="center">MECANICA DE FLUIDOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 17-20
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">BEJARANO GRÁNDEZ, OMAR</td>
+					</tr>
+										<tr>
+						<td>HH231</td>
+						<td class="center">G </td>
+						<td class="center">MECANICA DE FLUIDOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 20-22
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">BEJARANO GRÁNDEZ, OMAR</td>
+					</tr>
+										<tr>
+						<td>HH512</td>
+						<td class="center">G </td>
+						<td class="center">METEOROLOGIA Y CLIMATOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 16-18
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MATOS CALDAS, LIDIO ARMANDO</td>
+					</tr>
+										<tr>
+						<td>HH512</td>
+						<td class="center">G </td>
+						<td class="center">METEOROLOGIA Y CLIMATOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MATOS CALDAS, LIDIO ARMANDO</td>
+					</tr>
+										<tr>
+						<td>HH513</td>
+						<td class="center">G </td>
+						<td class="center">CONTAMINACION Y MODELAMIENTO ATMOSFERICO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 8-10
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">MATOS CALDAS, LIDIO ARMANDO</td>
+					</tr>
+										<tr>
+						<td>HH513</td>
+						<td class="center">G </td>
+						<td class="center">CONTAMINACION Y MODELAMIENTO ATMOSFERICO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">MATOS CALDAS, LIDIO ARMANDO</td>
+					</tr>
+										<tr>
+						<td>HH515</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA DE LA CALIDAD AMBIENTAL ATMOSFERICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">PINCHE LAURRE, CRISTÓBAL</td>
+					</tr>
+										<tr>
+						<td>HH515</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA DE LA CALIDAD AMBIENTAL ATMOSFERICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 20-22
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">PINCHE LAURRE, CRISTÓBAL</td>
+					</tr>
+										<tr>
+						<td>HO150</td>
+						<td class="center">G </td>
+						<td class="center">INTRODUCCION A LA INGENIERIA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 9-11
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>HO150</td>
+						<td class="center">G </td>
+						<td class="center">INTRODUCCION A LA INGENIERIA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 11-13
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">ARANA OCHOA, GIANINNA BETTY</td>
+					</tr>
+										<tr>
+						<td>HO210</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES QUIMICOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 19-20
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">MAMANI HERRERA,  BLANCA MERCEDES</td>
+					</tr>
+										<tr>
+						<td>HO210</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES QUIMICOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 17-19
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">MAMANI HERRERA,  BLANCA MERCEDES</td>
+					</tr>
+										<tr>
+						<td>HO210</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES QUIMICOS</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												MI 14-17
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">MAMANI HERRERA,  BLANCA MERCEDES</td>
+					</tr>
+										<tr>
+						<td>HO220</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES BIOLOGICOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">AYALA LIMAYLLA,  CHRISTIAN SAEL</td>
+					</tr>
+										<tr>
+						<td>HO220</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES BIOLOGICOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 18-22
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">AYALA LIMAYLLA,  CHRISTIAN SAEL</td>
+					</tr>
+										<tr>
+						<td>HO230</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES FISICOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 21-22
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">VILLENA CHAVEZ,  JORGE ALBERTO</td>
+					</tr>
+										<tr>
+						<td>HO230</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES FISICOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 19-21
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">VILLENA CHAVEZ,  JORGE ALBERTO</td>
+					</tr>
+										<tr>
+						<td>HO230</td>
+						<td class="center">F </td>
+						<td class="center">EVALUACION Y CONTROL DE AGENTES FISICOS</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												JU 15-18
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">MAMANI HERRERA,  BLANCA MERCEDES</td>
+					</tr>
+										<tr>
+						<td>HO310</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO ERGONOMICO DEL TRABAJO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D4-309 (A4) - VIRTUAL</td>
+						
+						<td class="center">ULLILEN MARCILLA,  CAROLINA</td>
+					</tr>
+										<tr>
+						<td>HO310</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO ERGONOMICO DEL TRABAJO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 17-20
+												</td>
+						<td class="center">D2-271 - VIRTUAL</td>
+						
+						<td class="center">ULLILEN MARCILLA,  CAROLINA</td>
+					</tr>
+										<tr>
+						<td>HO320</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO DE INSTALACIONES INDUSTRIALES DE HIGIENE Y SEGURIDAD</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 18-19
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">AYALA LIMAYLLA,  CHRISTIAN SAEL</td>
+					</tr>
+										<tr>
+						<td>HO320</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO DE INSTALACIONES INDUSTRIALES DE HIGIENE Y SEGURIDAD</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">LABIHSI</td>
+						
+						<td class="center">AYALA LIMAYLLA,  CHRISTIAN SAEL</td>
+					</tr>
+										<tr>
+						<td>HO320</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO DE INSTALACIONES INDUSTRIALES DE HIGIENE Y SEGURIDAD</td>
+						
+						<td class="center">LABORATORIO</td>  
+						<td class="center">
+												LU 19-22
+												</td>
+						<td class="center">CC2 (D2-321)</td>
+						
+						<td class="center">AYALA LIMAYLLA,  CHRISTIAN SAEL</td>
+					</tr>
+										<tr>
+						<td>MA074</td>
+						<td class="center">E </td>
+						<td class="center">MATEMATICA FINANCIERA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">CONTRERAS CONTRERAS, JUAN SANTIAGO</td>
+					</tr>
+										<tr>
+						<td>MA074</td>
+						<td class="center">E </td>
+						<td class="center">MATEMATICA FINANCIERA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">CONTRERAS CONTRERAS, JUAN SANTIAGO</td>
+					</tr>
+										<tr>
+						<td>MA085</td>
+						<td class="center">F </td>
+						<td class="center">MATEMATICAS ACTUARIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 18-20
+												</td>
+						<td class="center">D2-251 / VIRTUAL</td>
+						
+						<td class="center">GIL SANDOVAL HECTOR</td>
+					</tr>
+										<tr>
+						<td>MA085</td>
+						<td class="center">F </td>
+						<td class="center">MATEMATICAS ACTUARIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 17-18
+												</td>
+						<td class="center">D2-251 / VIRTUAL</td>
+						
+						<td class="center">GIL SANDOVAL HECTOR</td>
+					</tr>
+										<tr>
+						<td>MA153</td>
+						<td class="center">E </td>
+						<td class="center">ECUACIONES DIFERENCIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 10-12
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">TAZA CHAMBI,  GALINDO</td>
+					</tr>
+										<tr>
+						<td>MA153</td>
+						<td class="center">E </td>
+						<td class="center">ECUACIONES DIFERENCIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-11
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">TAZA CHAMBI,  GALINDO</td>
+					</tr>
+										<tr>
+						<td>MA153</td>
+						<td class="center">F </td>
+						<td class="center">ECUACIONES DIFERENCIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 8-11
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">VALVERDE CALDERON,  ADRIANA</td>
+					</tr>
+										<tr>
+						<td>MA153</td>
+						<td class="center">F </td>
+						<td class="center">ECUACIONES DIFERENCIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 10-12
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">VALVERDE CALDERON,  ADRIANA</td>
+					</tr>
+										<tr>
+						<td>MA153</td>
+						<td class="center">G </td>
+						<td class="center">ECUACIONES DIFERENCIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-11
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">HUILLCA LEVA, PEDRO DAVID</td>
+					</tr>
+										<tr>
+						<td>MA153</td>
+						<td class="center">G </td>
+						<td class="center">ECUACIONES DIFERENCIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 10-12
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">HUILLCA LEVA, PEDRO DAVID</td>
+					</tr>
+										<tr>
+						<td>MI233</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE MINERA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ROBLES GARCIA,  EUSEBIO</td>
+					</tr>
+										<tr>
+						<td>MI233</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE MINERA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ROBLES GARCIA,  EUSEBIO</td>
+					</tr>
+										<tr>
+						<td>PA140</td>
+						<td class="center">F </td>
+						<td class="center">GESTION EMPRESARIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">VALDIVIA MALDONADO,  PEDRO OSWALDO</td>
+					</tr>
+										<tr>
+						<td>PA140</td>
+						<td class="center">F </td>
+						<td class="center">GESTION EMPRESARIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">VALDIVIA MALDONADO,  PEDRO OSWALDO</td>
+					</tr>
+										<tr>
+						<td>PA425</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO Y EVALUACION DE PROYECTOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 19-22
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">COLLAZOS BELTRÁN  JORGE IVAN</td>
+					</tr>
+										<tr>
+						<td>PA425</td>
+						<td class="center">F </td>
+						<td class="center">DISEÑO Y EVALUACION DE PROYECTOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 17-19
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">COLLAZOS BELTRÁN  JORGE IVAN</td>
+					</tr>
+										<tr>
+						<td>PA425</td>
+						<td class="center">G </td>
+						<td class="center">DISEÑO Y EVALUACION DE PROYECTOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 10-12
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">COLLAZOS CERRÓN, JESÚS NEMESIO</td>
+					</tr>
+										<tr>
+						<td>PA425</td>
+						<td class="center">G </td>
+						<td class="center">DISEÑO Y EVALUACION DE PROYECTOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 10-13
+												</td>
+						<td class="center">D4-D</td>
+						
+						<td class="center">COLLAZOS CERRÓN, JESÚS NEMESIO</td>
+					</tr>
+										<tr>
+						<td>PA437</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE PROYECTOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D4-C</td>
+						
+						<td class="center">ALEJOS ALTAMIRANO, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>PA437</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE PROYECTOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D4-C</td>
+						
+						<td class="center">ALEJOS ALTAMIRANO, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>PA437</td>
+						<td class="center">J </td>
+						<td class="center">GESTION DE PROYECTOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">BEJARANO GRÁNDEZ, OMAR</td>
+					</tr>
+										<tr>
+						<td>PA437</td>
+						<td class="center">J </td>
+						<td class="center">GESTION DE PROYECTOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">GRADOS / VIRTUAL</td>
+						
+						<td class="center">BEJARANO GRÁNDEZ, OMAR</td>
+					</tr>
+										<tr>
+						<td>PA439</td>
+						<td class="center">G </td>
+						<td class="center">FINANZAS AMBIENTALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 18-21
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">COLLAZOS CERRÓN, JESÚS NEMESIO</td>
+					</tr>
+										<tr>
+						<td>PA439</td>
+						<td class="center">G </td>
+						<td class="center">FINANZAS AMBIENTALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 17-18
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">COLLAZOS CERRÓN, JESÚS NEMESIO</td>
+					</tr>
+										<tr>
+						<td>PI111</td>
+						<td class="center">F </td>
+						<td class="center">BALANCE DE MATERIA Y ENERGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 19-21
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">LLAGAS CHAFLOQUE,  WILMER ALBERTO</td>
+					</tr>
+										<tr>
+						<td>PI111</td>
+						<td class="center">F </td>
+						<td class="center">BALANCE DE MATERIA Y ENERGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">LLAGAS CHAFLOQUE,  WILMER ALBERTO</td>
+					</tr>
+										<tr>
+						<td>PI121</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA DE PROCESOS Y PRODUCCION MAS LIMPIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 8-10
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">NAHUI ORTIZ, JOHNNY PRUDENCIO</td>
+					</tr>
+										<tr>
+						<td>PI121</td>
+						<td class="center">G </td>
+						<td class="center">INGENIERIA DE PROCESOS Y PRODUCCION MAS LIMPIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 10-12
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">NAHUI ORTIZ, JOHNNY PRUDENCIO</td>
+					</tr>
+										<tr>
+						<td>QU125</td>
+						<td class="center">G </td>
+						<td class="center">BIOQUIMICA AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 14-16
+												</td>
+						<td class="center">D2-171 / LAB22</td>
+						
+						<td class="center">MARIN HUACHACA, NELIDA SIMONA</td>
+					</tr>
+										<tr>
+						<td>QU125</td>
+						<td class="center">G </td>
+						<td class="center">BIOQUIMICA AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-20
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">MARIN HUACHACA, NELIDA SIMONA</td>
+					</tr>
+										<tr>
+						<td>SA116</td>
+						<td class="center">E </td>
+						<td class="center">SANEAMIENTO RURAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 13-16
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">CHAVEZ ZEGARRA, FERNANDO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA116</td>
+						<td class="center">E </td>
+						<td class="center">SANEAMIENTO RURAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 10-12
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">ZAPATA PAYCO, ARTURO</td>
+					</tr>
+										<tr>
+						<td>SA126</td>
+						<td class="center">E </td>
+						<td class="center">SANEAMIENTO AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 18-21
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">CHAVEZ ZEGARRA, FERNANDO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA126</td>
+						<td class="center">E </td>
+						<td class="center">SANEAMIENTO AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center">CHAVEZ ZEGARRA, FERNANDO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA132</td>
+						<td class="center">F </td>
+						<td class="center">SANEAMIENTO INDUSTRIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 19-22
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">VILLENA CHAVEZ,  JORGE ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA132</td>
+						<td class="center">F </td>
+						<td class="center">SANEAMIENTO INDUSTRIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 17-19
+												</td>
+						<td class="center">D4-309 (A4)</td>
+						
+						<td class="center">VILLENA CHAVEZ,  JORGE ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA172</td>
+						<td class="center">E </td>
+						<td class="center">CONTAMINACION AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-21
+												</td>
+						<td class="center">D3-307(PGDO)</td>
+						
+						<td class="center">VALER CERNA,  KARLA MONICA</td>
+					</tr>
+										<tr>
+						<td>SA172</td>
+						<td class="center">E </td>
+						<td class="center">CONTAMINACION AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 19-21
+												</td>
+						<td class="center">D4-110(D4-A)</td>
+						
+						<td class="center">VALER CERNA,  KARLA MONICA</td>
+					</tr>
+										<tr>
+						<td>SA215</td>
+						<td class="center">E </td>
+						<td class="center">ABASTECIMIENTO DE AGUA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-19
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">OLIVAREZ VEGA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>SA215</td>
+						<td class="center">E </td>
+						<td class="center">ABASTECIMIENTO DE AGUA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">OLIVAREZ VEGA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>SA216</td>
+						<td class="center">E </td>
+						<td class="center">ABASTECIMIENTO DE AGUA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 18-20
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">OLIVAREZ VEGA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>SA216</td>
+						<td class="center">E </td>
+						<td class="center">ABASTECIMIENTO DE AGUA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 16-19
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">OLIVAREZ VEGA, JORGE LUIS</td>
+					</tr>
+										<tr>
+						<td>SA227</td>
+						<td class="center">E </td>
+						<td class="center">APROVECHAMIENTO DE AGUAS SUBTERRANEAS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">CERRON PALOMINO, MARCO ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA227</td>
+						<td class="center">E </td>
+						<td class="center">APROVECHAMIENTO DE AGUAS SUBTERRANEAS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 16-18
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">CERRON PALOMINO, MARCO ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA235</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS DE REDES Y FUENTES DE AGUA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 18-20
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">SANCHEZ MERLO, YURI MARCO</td>
+					</tr>
+										<tr>
+						<td>SA235</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS DE REDES Y FUENTES DE AGUA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 19-22
+												</td>
+						<td class="center">LAB-22</td>
+						
+						<td class="center">SANCHEZ MERLO, YURI MARCO</td>
+					</tr>
+										<tr>
+						<td>SA245</td>
+						<td class="center">E </td>
+						<td class="center">ALCANTARILLADO Y DRENAJE PLUVIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 18-19
+												</td>
+						<td class="center">LC/D4-210(D4-C)</td>
+						
+						<td class="center">PACCHA HUAMANI, PABLO ROBERTO</td>
+					</tr>
+										<tr>
+						<td>SA245</td>
+						<td class="center">E </td>
+						<td class="center">ALCANTARILLADO Y DRENAJE PLUVIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">PACCHA HUAMANI, PABLO ROBERTO</td>
+					</tr>
+										<tr>
+						<td>SA245</td>
+						<td class="center">E </td>
+						<td class="center">ALCANTARILLADO Y DRENAJE PLUVIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 20-22
+												</td>
+						<td class="center">LAB 20</td>
+						
+						<td class="center">SANCHEZ MERLO, YURI MARCO</td>
+					</tr>
+										<tr>
+						<td>SA266</td>
+						<td class="center">E </td>
+						<td class="center">TARIFAS EN INGENIERIA SANITARIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 8-10
+												</td>
+						<td class="center">L20/D4-210(D4-C)</td>
+						
+						<td class="center">ENZIAN SANSUY, RUBEN HUMBERTO</td>
+					</tr>
+										<tr>
+						<td>SA266</td>
+						<td class="center">E </td>
+						<td class="center">TARIFAS EN INGENIERIA SANITARIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 10-11
+												</td>
+						<td class="center">L20/D4-210(D4-C)</td>
+						
+						<td class="center">ENZIAN SANSUY, RUBEN HUMBERTO</td>
+					</tr>
+										<tr>
+						<td>SA266</td>
+						<td class="center">E </td>
+						<td class="center">TARIFAS EN INGENIERIA SANITARIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 12-14
+												</td>
+						<td class="center">L20/D4-210(D4-C)</td>
+						
+						<td class="center">ENZIAN SANSUY, RUBEN HUMBERTO</td>
+					</tr>
+										<tr>
+						<td>SA275</td>
+						<td class="center">E </td>
+						<td class="center">OPERACIONES, MANTENIMIENTO Y GERENCIA DE PROYECTOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 10-13
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">OCONNOR LA ROSA, ROBERTO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA275</td>
+						<td class="center">E </td>
+						<td class="center">OPERACIONES, MANTENIMIENTO Y GERENCIA DE PROYECTOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 9-11
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">OCONNOR LA ROSA, ROBERTO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA301</td>
+						<td class="center">F </td>
+						<td class="center">BIOLOGIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 10-13
+												</td>
+						<td class="center">LAB22 / D4-211(A2)</td>
+						
+						<td class="center">MARTINEZ VILA ALVARO MARTÍN</td>
+					</tr>
+										<tr>
+						<td>SA301</td>
+						<td class="center">F </td>
+						<td class="center">BIOLOGIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">CANCHARI MEDINA MARIBEL</td>
+					</tr>
+										<tr>
+						<td>SA301</td>
+						<td class="center">G </td>
+						<td class="center">BIOLOGIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 8-11
+												</td>
+						<td class="center">LAB-22</td>
+						
+						<td class="center">CHAPILLIQUEN ALBAN, JOSE FERNANDO</td>
+					</tr>
+										<tr>
+						<td>SA301</td>
+						<td class="center">G </td>
+						<td class="center">BIOLOGIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHAPILLIQUEN ALBAN, JOSE FERNANDO</td>
+					</tr>
+										<tr>
+						<td>SA301</td>
+						<td class="center">J </td>
+						<td class="center">BIOLOGIA GENERAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 9-12
+												</td>
+						<td class="center">LAB-22</td>
+						
+						<td class="center">SÁNCHEZ TORRES, HEIDI ISABEL</td>
+					</tr>
+										<tr>
+						<td>SA301</td>
+						<td class="center">J </td>
+						<td class="center">BIOLOGIA GENERAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">CHAPILLIQUEN ALBAN, JOSE FERNANDO</td>
+					</tr>
+										<tr>
+						<td>SA312</td>
+						<td class="center">E </td>
+						<td class="center">ECOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 19-20
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">HUARACA QUISPE, LIDIA PRISILA</td>
+					</tr>
+										<tr>
+						<td>SA312</td>
+						<td class="center">E </td>
+						<td class="center">ECOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">HUARACA QUISPE, LIDIA PRISILA</td>
+					</tr>
+										<tr>
+						<td>SA312</td>
+						<td class="center">G </td>
+						<td class="center">ECOLOGIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 12-13
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">SÁNCHEZ TORRES, HEIDI ISABEL</td>
+					</tr>
+										<tr>
+						<td>SA312</td>
+						<td class="center">G </td>
+						<td class="center">ECOLOGIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 11-13
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">SÁNCHEZ TORRES, HEIDI ISABEL</td>
+					</tr>
+										<tr>
+						<td>SA323</td>
+						<td class="center">E </td>
+						<td class="center">MICROBIOLOGIA SANITARIA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 9-11
+												</td>
+						<td class="center">D3-307(PGDO)</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA323</td>
+						<td class="center">E </td>
+						<td class="center">MICROBIOLOGIA SANITARIA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 11-13
+												</td>
+						<td class="center">LAB-22</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA323</td>
+						<td class="center">E </td>
+						<td class="center">MICROBIOLOGIA SANITARIA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA323</td>
+						<td class="center">H </td>
+						<td class="center">MICROBIOLOGIA SANITARIA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 9-11
+												</td>
+						<td class="center">D3-307(PGDO)</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA323</td>
+						<td class="center">H </td>
+						<td class="center">MICROBIOLOGIA SANITARIA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA323</td>
+						<td class="center">H </td>
+						<td class="center">MICROBIOLOGIA SANITARIA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">LAB-22</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA324</td>
+						<td class="center">E </td>
+						<td class="center">MICROBIOLOGIA SANITARIA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 9-11
+												</td>
+						<td class="center">LAB-22</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA324</td>
+						<td class="center">E </td>
+						<td class="center">MICROBIOLOGIA SANITARIA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 11-13
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">TELLO CEBREROS, JORGE GILBERTO</td>
+					</tr>
+										<tr>
+						<td>SA332</td>
+						<td class="center">F </td>
+						<td class="center">ANATOMIA Y FISIOLOGIA HUMANA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">DELGADO ACEVEDO,  MILTON CLYDE</td>
+					</tr>
+										<tr>
+						<td>SA332</td>
+						<td class="center">F </td>
+						<td class="center">ANATOMIA Y FISIOLOGIA HUMANA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 15-18
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">DELGADO ACEVEDO,  MILTON CLYDE</td>
+					</tr>
+										<tr>
+						<td>SA342</td>
+						<td class="center">F </td>
+						<td class="center">MEDICINA DEL TRABAJO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 15-18
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">CARRASCO VILLADOMA,  CRISTIAN</td>
+					</tr>
+										<tr>
+						<td>SA342</td>
+						<td class="center">F </td>
+						<td class="center">MEDICINA DEL TRABAJO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 14-16
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">CARRASCO VILLADOMA,  CRISTIAN</td>
+					</tr>
+										<tr>
+						<td>SA343</td>
+						<td class="center">E </td>
+						<td class="center">EPIDEMIOLOGIA Y SALUD PUBLICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">ROBLES RAZURI,  MILAGRITOS TERESA</td>
+					</tr>
+										<tr>
+						<td>SA343</td>
+						<td class="center">E </td>
+						<td class="center">EPIDEMIOLOGIA Y SALUD PUBLICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">ROBLES RAZURI,  MILAGRITOS TERESA</td>
+					</tr>
+										<tr>
+						<td>SA363</td>
+						<td class="center">E </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-171</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>SA363</td>
+						<td class="center">E </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">A2</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>SA363</td>
+						<td class="center">H </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">HUATAQUISPE VASQUEZ, MARGOT</td>
+					</tr>
+										<tr>
+						<td>SA363</td>
+						<td class="center">H </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">HUATAQUISPE VASQUEZ, MARGOT</td>
+					</tr>
+										<tr>
+						<td>SA401</td>
+						<td class="center">E </td>
+						<td class="center">QUIMICA SANITARIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 11-13
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>SA401</td>
+						<td class="center">E </td>
+						<td class="center">QUIMICA SANITARIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 11-13
+												</td>
+						<td class="center">LAB 20/D2-161</td>
+						
+						<td class="center">MASGO SOTO, CESAR AUGUSTO</td>
+					</tr>
+										<tr>
+						<td>SA413</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS DE AGUA Y DESAGÜE</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 17-21
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA413</td>
+						<td class="center">E </td>
+						<td class="center">ANALISIS DE AGUA Y DESAGÜE</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 9-13
+												</td>
+						<td class="center">LAB-20</td>
+						
+						<td class="center">ZAPATA PAYCO, ARTURO</td>
+					</tr>
+										<tr>
+						<td>SA426</td>
+						<td class="center">E </td>
+						<td class="center">PROCESOS UNITARIOS EN INGENIERIA SANITARIA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA426</td>
+						<td class="center">E </td>
+						<td class="center">PROCESOS UNITARIOS EN INGENIERIA SANITARIA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 16-19
+												</td>
+						<td class="center">LAB 20</td>
+						
+						<td class="center">HUAMAN JARA, VICENTE JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA426</td>
+						<td class="center">H </td>
+						<td class="center">PROCESOS UNITARIOS EN INGENIERIA SANITARIA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA426</td>
+						<td class="center">H </td>
+						<td class="center">PROCESOS UNITARIOS EN INGENIERIA SANITARIA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 18-21
+												</td>
+						<td class="center">LAB-20</td>
+						
+						<td class="center">HUAMAN JARA, VICENTE JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA427</td>
+						<td class="center">E </td>
+						<td class="center">PROCESOS UNITARIOS EN INGENIERIA SANITARIA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 18-21
+												</td>
+						<td class="center">LAB 20</td>
+						
+						<td class="center">HUAMAN JARA, VICENTE JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA427</td>
+						<td class="center">E </td>
+						<td class="center">PROCESOS UNITARIOS EN INGENIERIA SANITARIA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 15-17
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA445</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE AGUA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D4-D</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA445</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE AGUA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 16-18
+												</td>
+						<td class="center">LAB-20</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA445</td>
+						<td class="center">H </td>
+						<td class="center">TRATAMIENTO DE AGUA I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D4-D</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA445</td>
+						<td class="center">H </td>
+						<td class="center">TRATAMIENTO DE AGUA I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">LAB 20</td>
+						
+						<td class="center">ZAPATA PAYCO, ARTURO</td>
+					</tr>
+										<tr>
+						<td>SA446</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE AGUA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 12-15
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA446</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE AGUA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">LAB 20</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA446</td>
+						<td class="center">H </td>
+						<td class="center">TRATAMIENTO DE AGUA II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 12-15
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA446</td>
+						<td class="center">H </td>
+						<td class="center">TRATAMIENTO DE AGUA II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">LAB-20</td>
+						
+						<td class="center">MALDONADO YACTAYO, VICTOR ANTONIO</td>
+					</tr>
+										<tr>
+						<td>SA465</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE DESAGÜES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 19-22
+												</td>
+						<td class="center">D2-271 / VIRTUAL</td>
+						
+						<td class="center">YAYA BEAS, ROSA ELENA</td>
+					</tr>
+										<tr>
+						<td>SA465</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE DESAGÜES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 15-17
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA465</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO DE DESAGÜES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 17-18
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA467</td>
+						<td class="center">E </td>
+						<td class="center">MANEJO Y TRATAMIENTO DE RESIDUOS SOLIDOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 12-14
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">MAUTINO CANO, VALERY RENE</td>
+					</tr>
+										<tr>
+						<td>SA467</td>
+						<td class="center">E </td>
+						<td class="center">MANEJO Y TRATAMIENTO DE RESIDUOS SOLIDOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">SALA DE GRADOS</td>
+						
+						<td class="center">CERRON PALOMINO, MARCO ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA468</td>
+						<td class="center">E </td>
+						<td class="center">INGENIERIA DE RESIDUOS HOSPITALARIOS Y PELIGROSOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MAUTINO CANO, VALERY RENE</td>
+					</tr>
+										<tr>
+						<td>SA468</td>
+						<td class="center">E </td>
+						<td class="center">INGENIERIA DE RESIDUOS HOSPITALARIOS Y PELIGROSOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 10-12
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">MAUTINO CANO, VALERY RENE</td>
+					</tr>
+										<tr>
+						<td>SA475</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO AVANZADO DE AGUAS RESIDUALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 15-18
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">ALARCON CONDOR, JUAN CARLOS</td>
+					</tr>
+										<tr>
+						<td>SA475</td>
+						<td class="center">E </td>
+						<td class="center">TRATAMIENTO AVANZADO DE AGUAS RESIDUALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 20-22
+												</td>
+						<td class="center">D2-271 / VIRTUAL</td>
+						
+						<td class="center">YAYA BEAS, ROSA ELENA</td>
+					</tr>
+										<tr>
+						<td>SA516</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES SANITARIAS EN EDIFICACIONES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 18-21
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">PACCHA HUAMANI, PABLO ROBERTO</td>
+					</tr>
+										<tr>
+						<td>SA516</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES SANITARIAS EN EDIFICACIONES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">LC/D4-210(D4-C)</td>
+						
+						<td class="center">PACCHA HUAMANI, PABLO ROBERTO</td>
+					</tr>
+										<tr>
+						<td>SA517</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES SANITARIAS ESPECIALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D4-209 A1 / VIRTUAL</td>
+						
+						<td class="center">SALAZAR GAVELAN, ROGER EDMUNDO</td>
+					</tr>
+										<tr>
+						<td>SA517</td>
+						<td class="center">E </td>
+						<td class="center">INSTALACIONES SANITARIAS ESPECIALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 19-21
+												</td>
+						<td class="center">D4-209 A1 / VIRTUAL</td>
+						
+						<td class="center">SALAZAR GAVELAN, ROGER EDMUNDO</td>
+					</tr>
+										<tr>
+						<td>SA526</td>
+						<td class="center">E </td>
+						<td class="center">MAQUINAS Y EQUIPOS SANITARIOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-271 / VIRTUAL</td>
+						
+						<td class="center">SALAZAR GAVELAN, ROGER EDMUNDO</td>
+					</tr>
+										<tr>
+						<td>SA526</td>
+						<td class="center">E </td>
+						<td class="center">MAQUINAS Y EQUIPOS SANITARIOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 17-19
+												</td>
+						<td class="center">D2-271 / VIRTUAL</td>
+						
+						<td class="center">SALAZAR GAVELAN, ROGER EDMUNDO</td>
+					</tr>
+										<tr>
+						<td>SA625</td>
+						<td class="center">F </td>
+						<td class="center">VENTILACION INDUSTRIAL I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 18-20
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">NARCISO CHAVEZ,  JUAN EDGARDO</td>
+					</tr>
+										<tr>
+						<td>SA625</td>
+						<td class="center">F </td>
+						<td class="center">VENTILACION INDUSTRIAL I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 20-22
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">NARCISO CHAVEZ,  JUAN EDGARDO</td>
+					</tr>
+										<tr>
+						<td>SA626</td>
+						<td class="center">F </td>
+						<td class="center">VENTILACION INDUSTRIAL II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 18-20
+												</td>
+						<td class="center">D2-151</td>
+						
+						<td class="center">NARCISO CHAVEZ,  JUAN EDGARDO</td>
+					</tr>
+										<tr>
+						<td>SA626</td>
+						<td class="center">F </td>
+						<td class="center">VENTILACION INDUSTRIAL II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 20-22
+												</td>
+						<td class="center">D2-151 / LABIHSI</td>
+						
+						<td class="center">NARCISO CHAVEZ,  JUAN EDGARDO</td>
+					</tr>
+										<tr>
+						<td>SA633</td>
+						<td class="center">F </td>
+						<td class="center">HIGIENE INDUSTRIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">NARCISO CHAVEZ,  JUAN EDGARDO</td>
+					</tr>
+										<tr>
+						<td>SA633</td>
+						<td class="center">F </td>
+						<td class="center">HIGIENE INDUSTRIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 10-12
+												</td>
+						<td class="center">D2-361</td>
+						
+						<td class="center">NARCISO CHAVEZ,  JUAN EDGARDO</td>
+					</tr>
+										<tr>
+						<td>SA654</td>
+						<td class="center">F </td>
+						<td class="center">ERGONOMIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 16-19
+												</td>
+						<td class="center">D2-371 / LABIHSI</td>
+						
+						<td class="center">ULLILEN MARCILLA,  CAROLINA</td>
+					</tr>
+										<tr>
+						<td>SA654</td>
+						<td class="center">F </td>
+						<td class="center">ERGONOMIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 19-21
+												</td>
+						<td class="center">D4-211 (A2)</td>
+						
+						<td class="center">VILLENA CHAVEZ,  JORGE ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA725</td>
+						<td class="center">F </td>
+						<td class="center">PREVENCION Y CONTROL DE INCENDIOS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-10
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">TAIPE ROJAS,  JAVIER ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SA725</td>
+						<td class="center">F </td>
+						<td class="center">PREVENCION Y CONTROL DE INCENDIOS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 10-13
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">TAIPE ROJAS,  JAVIER ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SA745</td>
+						<td class="center">F </td>
+						<td class="center">EQUIPOS DE PROTECCION PERSONAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D4-309(A4)</td>
+						
+						<td class="center">ROBLES GARCIA,  EUSEBIO</td>
+					</tr>
+										<tr>
+						<td>SA745</td>
+						<td class="center">F </td>
+						<td class="center">EQUIPOS DE PROTECCION PERSONAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ROBLES GARCIA,  EUSEBIO</td>
+					</tr>
+										<tr>
+						<td>SA746</td>
+						<td class="center">F </td>
+						<td class="center">PROTECCION Y SEGURIDAD RADIOLOGICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 16-18
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">VALDIVIA MALDONADO,  PEDRO OSWALDO</td>
+					</tr>
+										<tr>
+						<td>SA746</td>
+						<td class="center">F </td>
+						<td class="center">PROTECCION Y SEGURIDAD RADIOLOGICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 16-19
+												</td>
+						<td class="center">D4-211 (A2)</td>
+						
+						<td class="center">VALDIVIA MALDONADO,  PEDRO OSWALDO</td>
+					</tr>
+										<tr>
+						<td>SA828</td>
+						<td class="center">E </td>
+						<td class="center">SUPERVISION DE OBRAS</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 15-18
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">PACCHA HUAMANI, PABLO ROBERTO</td>
+					</tr>
+										<tr>
+						<td>SA828</td>
+						<td class="center">E </td>
+						<td class="center">SUPERVISION DE OBRAS</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 19-21
+												</td>
+						<td class="center">D4-210(D4-C)</td>
+						
+						<td class="center">PACCHA HUAMANI, PABLO ROBERTO</td>
+					</tr>
+										<tr>
+						<td>SA835</td>
+						<td class="center">F </td>
+						<td class="center">ADMINISTRACION DE PROGRAMAS DE HIGIENE Y SEGURIDAD INDUSTRIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">VALDIVIA MALDONADO,  PEDRO OSWALDO</td>
+					</tr>
+										<tr>
+						<td>SA835</td>
+						<td class="center">F </td>
+						<td class="center">ADMINISTRACION DE PROGRAMAS DE HIGIENE Y SEGURIDAD INDUSTRIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">MARTINEZ CAMPOS FLORIPEZ</td>
+					</tr>
+										<tr>
+						<td>SA846</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE LA SEGURIDAD Y SALUD OCUPACIONAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">HERNANDEZ CARRILLO,  MARIA JESUS</td>
+					</tr>
+										<tr>
+						<td>SA846</td>
+						<td class="center">G </td>
+						<td class="center">GESTION DE LA SEGURIDAD Y SALUD OCUPACIONAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 14-16
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">HERNANDEZ CARRILLO,  MARIA JESUS</td>
+					</tr>
+										<tr>
+						<td>SA921</td>
+						<td class="center">E </td>
+						<td class="center">EVALUACION DEL IMPACTO AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 17-19
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>SA921</td>
+						<td class="center">E </td>
+						<td class="center">EVALUACION DEL IMPACTO AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 15-17
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center"></td>
+					</tr>
+										<tr>
+						<td>SA923</td>
+						<td class="center">E </td>
+						<td class="center">PREVENCION CONTRA DESASTRES NATURALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">OCONNOR LA ROSA, ROBERTO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA923</td>
+						<td class="center">E </td>
+						<td class="center">PREVENCION CONTRA DESASTRES NATURALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 15-16
+												</td>
+						<td class="center">D3-205</td>
+						
+						<td class="center">OCONNOR LA ROSA, ROBERTO JAVIER</td>
+					</tr>
+										<tr>
+						<td>SA931</td>
+						<td class="center">G </td>
+						<td class="center">SISTEMAS DE EVALUACION DE IMPACTO AMBIENTAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 20-22
+												</td>
+						<td class="center">D2-371</td>
+						
+						<td class="center">ALVA HUAPAYA, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SA931</td>
+						<td class="center">G </td>
+						<td class="center">SISTEMAS DE EVALUACION DE IMPACTO AMBIENTAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 19-22
+												</td>
+						<td class="center">D4-A</td>
+						
+						<td class="center">ALVA HUAPAYA, CARLOS ALBERTO</td>
+					</tr>
+										<tr>
+						<td>SE101</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA DE SEGURIDAD I</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 15-18
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">TAIPE ROJAS,  JAVIER ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SE101</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA DE SEGURIDAD I</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 15-18
+												</td>
+						<td class="center">D4-311(A5)</td>
+						
+						<td class="center">TAIPE ROJAS,  JAVIER ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SE102</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA DE SEGURIDAD II</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 17-19
+												</td>
+						<td class="center">D4-209 (A1)</td>
+						
+						<td class="center">AYALA LIMAYLLA,  CHRISTIAN SAEL</td>
+					</tr>
+										<tr>
+						<td>SE102</td>
+						<td class="center">F </td>
+						<td class="center">INGENIERIA DE SEGURIDAD II</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MA 18-21
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">TAIPE ROJAS,  JAVIER ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SE103</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE EN LA CONSTRUCCION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">HERNANDEZ CARRILLO,  MARIA JESUS</td>
+					</tr>
+										<tr>
+						<td>SE103</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE EN LA CONSTRUCCION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-271</td>
+						
+						<td class="center">HERNANDEZ CARRILLO,  MARIA JESUS</td>
+					</tr>
+										<tr>
+						<td>SE214</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD ELECTRICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												LU 16-18
+												</td>
+						<td class="center">D3-309 POSGRADO</td>
+						
+						<td class="center">SAAVEDRA FARFAN,  BLAS ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SE214</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD ELECTRICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MA 16-18
+												</td>
+						<td class="center">D3-309 POSGRADO</td>
+						
+						<td class="center">SAAVEDRA FARFAN,  BLAS ENRIQUE</td>
+					</tr>
+										<tr>
+						<td>SE222</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE EN ACTIVIDADES DE PESQUERIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ROBLES GARCIA,  EUSEBIO</td>
+					</tr>
+										<tr>
+						<td>SE222</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE EN ACTIVIDADES DE PESQUERIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												LU 14-16
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ROBLES GARCIA,  EUSEBIO</td>
+					</tr>
+										<tr>
+						<td>SE300</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE ALIMENTARIA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												SA 11-13
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ORDOÑEZ GUERRERO,  IRIS CECILIA</td>
+					</tr>
+										<tr>
+						<td>SE300</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE ALIMENTARIA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												SA 8-11
+												</td>
+						<td class="center">D4-209(A1)</td>
+						
+						<td class="center">ORDOÑEZ GUERRERO,  IRIS CECILIA</td>
+					</tr>
+										<tr>
+						<td>SE303</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE EN HOSPITALES</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 20-22
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">DIAZ AQUINO,  GLADYS ERNESTINA</td>
+					</tr>
+										<tr>
+						<td>SE303</td>
+						<td class="center">F </td>
+						<td class="center">SEGURIDAD E HIGIENE EN HOSPITALES</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												VI 18-20
+												</td>
+						<td class="center">D4-208(D4-D)</td>
+						
+						<td class="center">DIAZ AQUINO,  GLADYS ERNESTINA</td>
+					</tr>
+										<tr>
+						<td>SO322</td>
+						<td class="center">F </td>
+						<td class="center">TOXICOLOGIA INDUSTRIAL</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 13-15
+												</td>
+						<td class="center">D4-211(A2)</td>
+						
+						<td class="center">BECERRA PAUCAR,  ROSA AMPARO</td>
+					</tr>
+										<tr>
+						<td>SO322</td>
+						<td class="center">F </td>
+						<td class="center">TOXICOLOGIA INDUSTRIAL</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 16-18
+												</td>
+						<td class="center">D2-261</td>
+						
+						<td class="center">BECERRA PAUCAR,  ROSA AMPARO</td>
+					</tr>
+										<tr>
+						<td>SO331</td>
+						<td class="center">F </td>
+						<td class="center">SISTEMA DE GESTION DE LA SEGURIDAD Y SALUD EN EL TRABAJO</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												JU 13-14
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">DIAZ AQUINO,  GLADYS ERNESTINA</td>
+					</tr>
+										<tr>
+						<td>SO331</td>
+						<td class="center">F </td>
+						<td class="center">SISTEMA DE GESTION DE LA SEGURIDAD Y SALUD EN EL TRABAJO</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												JU 14-16
+												</td>
+						<td class="center">D2-161</td>
+						
+						<td class="center">DIAZ AQUINO,  GLADYS ERNESTINA</td>
+					</tr>
+										<tr>
+						<td>SP110</td>
+						<td class="center">F </td>
+						<td class="center">SALUD PUBLICA</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">CARRASCO VILLADOMA,  CRISTIAN</td>
+					</tr>
+										<tr>
+						<td>SP110</td>
+						<td class="center">F </td>
+						<td class="center">SALUD PUBLICA</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 17-18
+												</td>
+						<td class="center">D2-351</td>
+						
+						<td class="center">CARRASCO VILLADOMA,  CRISTIAN</td>
+					</tr>
+										<tr>
+						<td>TI175</td>
+						<td class="center">F </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-261 / VIRTUAL</td>
+						
+						<td class="center">DELGADO VILLANUEVA KIKO ALEXI</td>
+					</tr>
+										<tr>
+						<td>TI175</td>
+						<td class="center">F </td>
+						<td class="center">TALLER DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												MI 20-22
+												</td>
+						<td class="center">D2-261 / VIRTUAL</td>
+						
+						<td class="center">DELGADO VILLANUEVA KIKO ALEXI</td>
+					</tr>
+										<tr>
+						<td>TP174</td>
+						<td class="center">F </td>
+						<td class="center">TALLER DE PROYECTO DE INVESTIGACION</td>
+						
+						<td class="center">PRACTICA</td>  
+						<td class="center">
+												VI 17-19
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">BECERRA PAUCAR,  ROSA AMPARO</td>
+					</tr>
+										<tr>
+						<td>TP174</td>
+						<td class="center">F </td>
+						<td class="center">TALLER DE PROYECTO DE INVESTIGACION</td>
+						
+						<td class="center">TEORIA</td>  
+						<td class="center">
+												MI 18-20
+												</td>
+						<td class="center">D2-251</td>
+						
+						<td class="center">BECERRA PAUCAR,  ROSA AMPARO</td>
+					</tr>
+										                          
+				  </tbody>
+			 </table>  
+
+		</div>
+
+	</div><!--/span-->
+				
+</div>
+
+
+<div class="modal hide fade" id="preloader" style="width: 120px;top: 40%;margin-left: 10px;">
+	<div class="modal-body">
+		<center>
+			<img src="preloader.gif" />
+			<br /><br />
+			<span class="">
+				<span class="label label-important">CARGANDO</span>
+			</span>
+		</center>
+	</div>
+</div>
+<div style="display:none;">
+	<script id="_waub6t">var _wau = _wau || []; _wau.push(["small", "z4a1r2d3s1x6", "b6t"]);
+	(function() {var s=document.createElement("script"); s.async=true;
+	s.src="http://widgets.amung.us/small.js";
+	document.getElementsByTagName("head")[0].appendChild(s);
+	})();
+	</script>
+</div><div style="clear:both;"></div>
+			
+						
+			
+       
+					
+			</div>
+			<!-- end: Content -->
+				
+		</div><!--/fluid-row-->
+				
+		
+		<div class="clearfix"></div>
+		
+		<footer>
+	<p>
+		<span style="text-align:left;float:left">&copy; 2022 <a href="https://www.orce.uni.edu.pe" alt="Bootstrap Themes">ORCE</a> | Hora del Sistema: 22-03-2026 04:54:31</span>
+		<span class="hidden-phone" style="text-align:right;float:right"><a href="https://www.uni.edu.pe" alt="Bootstrap Admin Templates">UNI</a></span>
+	</p>
+</footer>				
+	</div><!--/.fluid-container-->
+
+	<!-- start: JavaScript-->
+	<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>	
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>	
+<script src="js/jquery.ui.touch-punch.js"></script>	
+<script src="js/modernizr.js"></script>	
+<script src="js/bootstrap.min.js"></script>	
+<script src="js/jquery.iphone.toggle.js"></script>	
+
+<script src="js/jquery.cookie.js"></script>	
+<script src='js/fullcalendar.min.js'></script>	
+<script src='js/jquery.dataTables.min.js'></script>
+<script src="js/excanvas.js"></script>
+<script src="js/jquery.flot.js"></script>
+<script src="js/jquery.flot.pie.js"></script>
+<script src="js/jquery.flot.stack.js"></script>
+<script src="js/jquery.flot.resize.min.js"></script>
+<script src="js/jquery.flot.time.js"></script>
+
+<script src="js/jquery.chosen.min.js"></script>	
+<script src="js/jquery.uniform.min.js"></script>		
+<script src="js/jquery.cleditor.min.js"></script>	
+<script src="js/jquery.noty.js"></script>	
+<script src="js/jquery.elfinder.min.js"></script>	
+<script src="js/jquery.raty.min.js"></script>	
+
+<script src="js/jquery.uploadify-3.1.min.js"></script>	
+<script src="js/jquery.gritter.min.js"></script>	
+<script src="js/jquery.imagesloaded.js"></script>	
+<script src="js/jquery.masonry.min.js"></script>	
+<script src="js/jquery.knob.modified.js"></script>	
+<script src="js/jquery.sparkline.min.js"></script>	
+
+<script src="js/counter.min.js"></script>	
+<script src="js/raphael.2.1.0.min.js"></script>
+<script src="js/justgage.1.0.1.min.js"></script>	
+<script src="js/jquery.autosize.min.js"></script>	
+<script src="js/retina.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/wizard.min.js"></script>
+<script src="js/core.min.js"></script>	
+<script src="js/charts.min.js"></script>	
+<script src="js/custom.min.js"></script>
+
+<script>
+$(function(){
+	$('#sidebar-left li a.local,#ainicio').click(function(){
+		$('#preloader').modal({'backdrop':'static'});
+		return true;
+	});
+});
+</script>
+	
+	<!-- end: JavaScript-->
+	<script>
+	console.log("======================================================");
+	console.log("  ____  _____   _____ ______   _    _ _   _ _____ ");
+	console.log(" / __ \\|  __ \\ / ____|  ____| | |  | | \\ | |_   _|");
+	console.log("| |  | | |__) | |    | |__    | |  | |  \\| | | |  ");
+	console.log("| |  | |  _  /| |    |  __|   | |  | | . ` | | |  ");
+	console.log("| |__| | | \\ \\| |____| |____  | |__| | |\\  |_| |_ ");
+	console.log(" \\____/|_|  \\_\\\\_____|______|  \\____/|_| \\_|_____|");
+	console.log("======================================================");
+	console.log("Abriste la consola!, parece que sabes algo de código,");
+	console.log("nos ayudaría mucho tus feedbacks. ;)");
+	console.log("======================================================");
+	</script>
+</body>
+</html>
