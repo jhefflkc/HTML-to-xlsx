@@ -356,26 +356,36 @@
     const ICONS = { light: "🌙", dark: "☀️" };
     const LABELS = { light: "Cambiar a modo oscuro", dark: "Cambiar a modo claro" };
     const STORAGE_KEY = "theme";
+    const systemQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-    function applyTheme(theme) {
-      document.documentElement.dataset.theme = theme;
+    function getEffectiveTheme() {
+      return document.documentElement.dataset.theme ||
+        (systemQuery.matches ? "dark" : "light");
+    }
+
+    function updateToggle() {
+      const theme = getEffectiveTheme();
       toggle.textContent = ICONS[theme];
       toggle.setAttribute("aria-label", LABELS[theme]);
     }
 
-    const saved = localStorage.getItem(STORAGE_KEY);
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(saved || (systemDark ? "dark" : "light"));
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      localStorage.setItem(STORAGE_KEY, theme);
+      updateToggle();
+    }
+
+    // Initialize toggle icon based on effective theme (saved or system)
+    updateToggle();
 
     toggle.addEventListener("click", () => {
-      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      localStorage.setItem(STORAGE_KEY, next);
-      applyTheme(next);
+      applyTheme(getEffectiveTheme() === "dark" ? "light" : "dark");
     });
 
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    // Follow system changes when no manual preference is saved
+    systemQuery.addEventListener("change", () => {
       if (!localStorage.getItem(STORAGE_KEY)) {
-        applyTheme(e.matches ? "dark" : "light");
+        updateToggle();
       }
     });
   }

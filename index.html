@@ -7,8 +7,7 @@
     <script>
       (function () {
         var saved = localStorage.getItem("theme");
-        var system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        document.documentElement.dataset.theme = saved || system;
+        if (saved) document.documentElement.dataset.theme = saved;
       })();
     </script>
     <link rel="stylesheet" href="styles.css" />
@@ -19,14 +18,12 @@
         <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema"></button>
       </div>
       <section class="hero">
-        <p class="eyebrow">Conversor local</p>
-        <h1>Arrastra tus HTML y genera el Excel con el mismo formato</h1>
+        <p class="eyebrow">Horarios FIA</p>
+        <h1>Convierte tu HTML en XLSX</h1>
         <p class="hero-copy">
-          Suelta uno o varios archivos HTML exportados desde Matrícula UNI. La aplicación
-          extrae las columnas <strong>Cod</strong>, <strong>Secc</strong>, <strong>Curso</strong>,
-          <strong>Tipo</strong>, <strong>Horario</strong>, <strong>Aula</strong> y
-          <strong>Docente</strong>, las previsualiza y descarga un archivo XLSX con el mismo
-          formato del ejemplo.
+          Sube el HTML exportado desde <strong>Horarios-FIA</strong> y descarga al instante
+          un archivo Excel listo para usar. Sin servidores, sin instalaciones, todo ocurre
+          en tu navegador.
         </p>
       </section>
 
