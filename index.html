@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML a XLSX | Horarios UNI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Conversor local</p>
+        <h1>Arrastra tus HTML y genera el Excel con el mismo formato</h1>
+        <p class="hero-copy">
+          Suelta uno o varios archivos HTML exportados desde Matrícula UNI. La aplicación
+          extrae las columnas <strong>Cod</strong>, <strong>Secc</strong>, <strong>Curso</strong>,
+          <strong>Tipo</strong>, <strong>Horario</strong>, <strong>Aula</strong> y
+          <strong>Docente</strong>, las previsualiza y descarga un archivo XLSX con el mismo
+          formato del ejemplo.
+        </p>
+      </section>
+
+      <section class="panel">
+        <label id="drop-zone" class="drop-zone" for="file-input">
+          <input id="file-input" type="file" accept=".html,.htm,text/html" multiple hidden />
+          <span class="drop-zone__icon">📄</span>
+          <span class="drop-zone__title">Arrastra aquí tus HTML</span>
+          <span class="drop-zone__subtitle">o haz clic para seleccionarlos</span>
+        </label>
+
+        <div class="actions">
+          <button id="download-button" class="primary-button" disabled>
+            Descargar XLSX
+          </button>
+          <button id="reset-button" class="secondary-button" disabled>
+            Limpiar
+          </button>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <span class="summary-card__label">Archivos cargados</span>
+            <strong id="file-count">0</strong>
+          </article>
+          <article class="summary-card">
+            <span class="summary-card__label">Filas extraídas</span>
+            <strong id="row-count">0</strong>
+          </article>
+          <article class="summary-card">
+            <span class="summary-card__label">Estado</span>
+            <strong id="status-text">Esperando archivos</strong>
+          </article>
+        </div>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <div class="files-panel">
+          <h2>Fuentes procesadas</h2>
+          <ul id="source-list" class="source-list">
+            <li class="empty-state">Todavía no hay archivos procesados.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="table-panel__header">
+          <h2>Vista previa</h2>
+          <span id="table-caption">No hay datos todavía.</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Cod</th>
+                <th>Secc</th>
+                <th>Curso</th>
+                <th>Tipo</th>
+                <th>Horario</th>
+                <th>Aula</th>
+                <th>Docente</th>
+              </tr>
+            </thead>
+            <tbody id="preview-body">
+              <tr>
+                <td colspan="7" class="empty-state empty-state--table">
+                  Arrastra un archivo HTML para ver la tabla.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
