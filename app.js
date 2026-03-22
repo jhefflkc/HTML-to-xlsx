@@ -349,11 +349,43 @@
     }
   }
 
+  function setupTheme() {
+    const toggle = document.getElementById("theme-toggle");
+    if (!toggle) return;
+
+    const ICONS = { light: "🌙", dark: "☀️" };
+    const LABELS = { light: "Cambiar a modo oscuro", dark: "Cambiar a modo claro" };
+    const STORAGE_KEY = "theme";
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      toggle.textContent = ICONS[theme];
+      toggle.setAttribute("aria-label", LABELS[theme]);
+    }
+
+    const saved = localStorage.getItem(STORAGE_KEY);
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(saved || (systemDark ? "dark" : "light"));
+
+    toggle.addEventListener("click", () => {
+      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem(STORAGE_KEY, next);
+      applyTheme(next);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        applyTheme(e.matches ? "dark" : "light");
+      }
+    });
+  }
+
   function setupApp() {
     if (typeof document === "undefined") {
       return;
     }
 
+    setupTheme();
     const state = createState();
     const dropZone = document.getElementById("drop-zone");
     const fileInput = document.getElementById("file-input");
