@@ -4,10 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML a XLSX | Horarios UNI</title>
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = saved || system;
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-shell">
+      <div class="app-bar">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema"></button>
+      </div>
       <section class="hero">
         <p class="eyebrow">Conversor local</p>
         <h1>Arrastra tus HTML y genera el Excel con el mismo formato</h1>
