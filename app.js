@@ -1,19 +1,4 @@
 (function (global) {
-  function applyMaterialTheme() {
-    if (typeof document === "undefined") {
-      return;
-    }
-
-    if (!document.querySelector('link[data-material-theme="true"]')) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = "material-theme.css";
-      link.dataset.materialTheme = "true";
-      document.head.appendChild(link);
-    }
-
-    document.body.classList.add("material-theme");
-  }
 
   const HEADERS = ["Cod", "Secc", "Curso", "Tipo", "Horario", "Aula", "Docente"];
   const TITLE = "Matrícula UNI | Horarios";
@@ -468,7 +453,6 @@
     module.exports = exported;
   } else {
     global.HtmlToXlsxApp = exported;
-    applyMaterialTheme();
     setupApp();
   }
 })(typeof window !== "undefined" ? window : globalThis);
