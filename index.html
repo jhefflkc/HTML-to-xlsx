@@ -8,150 +8,87 @@
   </head>
   <body>
     <main class="app-shell">
-      <header class="top-app-bar">
-        <div class="brand-mark" aria-hidden="true">⇄</div>
-        <div class="top-app-bar__content">
-          <span class="overline">Material inspired UI</span>
-          <h1>HTML a XLSX</h1>
-          <p>Extrae horarios desde archivos HTML y descárgalos con formato listo para Excel.</p>
-        </div>
-        <div class="top-app-bar__badge">UNI</div>
-      </header>
-
-      <section class="hero-card surface surface--hero">
-        <div class="hero-card__copy">
-          <span class="eyebrow">Conversor local</span>
-          <h2>Arrastra tus HTML y genera el Excel con el mismo formato</h2>
-          <p>
-            La app procesa uno o varios archivos de Matrícula UNI, extrae las columnas
-            <strong>Cod</strong>, <strong>Secc</strong>, <strong>Curso</strong>,
-            <strong>Tipo</strong>, <strong>Horario</strong>, <strong>Aula</strong> y
-            <strong>Docente</strong>, y descarga un XLSX directamente desde el navegador.
-          </p>
-
-          <div class="hero-chips">
-            <span class="chip">Sin dependencias externas</span>
-            <span class="chip">Arrastrar y soltar</span>
-            <span class="chip">Exportación XLSX</span>
-          </div>
-        </div>
-
-        <aside class="hero-card__panel surface surface--tonal">
-          <span class="hero-card__panel-label">Formato esperado</span>
-          <ul class="columns-list">
-            <li>Cod</li>
-            <li>Secc</li>
-            <li>Curso</li>
-            <li>Tipo</li>
-            <li>Horario</li>
-            <li>Aula</li>
-            <li>Docente</li>
-          </ul>
-        </aside>
+      <section class="hero">
+        <p class="eyebrow">Conversor local</p>
+        <h1>Arrastra tus HTML y genera el Excel con el mismo formato</h1>
+        <p class="hero-copy">
+          Suelta uno o varios archivos HTML exportados desde Matrícula UNI. La aplicación
+          extrae las columnas <strong>Cod</strong>, <strong>Secc</strong>, <strong>Curso</strong>,
+          <strong>Tipo</strong>, <strong>Horario</strong>, <strong>Aula</strong> y
+          <strong>Docente</strong>, las previsualiza y descarga un archivo XLSX con el mismo
+          formato del ejemplo.
+        </p>
       </section>
 
-      <section class="workspace-grid">
-        <div class="workspace-column workspace-column--main">
-          <section class="surface surface--elevated control-card">
-            <div class="section-heading">
-              <div>
-                <span class="section-kicker">Carga de archivos</span>
-                <h2>Importa tus HTML</h2>
-              </div>
-              <span class="section-pill">Drag & drop</span>
-            </div>
+      <section class="panel">
+        <label id="drop-zone" class="drop-zone" for="file-input">
+          <input id="file-input" type="file" accept=".html,.htm,text/html" multiple hidden />
+          <span class="drop-zone__icon">📄</span>
+          <span class="drop-zone__title">Arrastra aquí tus HTML</span>
+          <span class="drop-zone__subtitle">o haz clic para seleccionarlos</span>
+        </label>
 
-            <label id="drop-zone" class="drop-zone" for="file-input">
-              <input id="file-input" type="file" accept=".html,.htm,text/html" multiple hidden />
-              <span class="drop-zone__orb" aria-hidden="true">📄</span>
-              <span class="drop-zone__title">Arrastra aquí tus HTML</span>
-              <span class="drop-zone__subtitle">o toca para seleccionarlos manualmente</span>
-            </label>
-
-            <div class="actions">
-              <button id="download-button" class="primary-button" disabled>
-                Descargar XLSX
-              </button>
-              <button id="reset-button" class="secondary-button" disabled>
-                Limpiar
-              </button>
-            </div>
-
-            <div id="message" class="message surface surface--soft" role="status" aria-live="polite"></div>
-          </section>
-
-          <section class="surface surface--elevated table-panel">
-            <div class="section-heading section-heading--table">
-              <div>
-                <span class="section-kicker">Resultado</span>
-                <h2>Vista previa de la tabla</h2>
-              </div>
-              <span id="table-caption">No hay datos todavía.</span>
-            </div>
-
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Cod</th>
-                    <th>Secc</th>
-                    <th>Curso</th>
-                    <th>Tipo</th>
-                    <th>Horario</th>
-                    <th>Aula</th>
-                    <th>Docente</th>
-                  </tr>
-                </thead>
-                <tbody id="preview-body">
-                  <tr>
-                    <td colspan="7" class="empty-state empty-state--table">
-                      Arrastra un archivo HTML para ver la tabla.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
+        <div class="actions">
+          <button id="download-button" class="primary-button" disabled>
+            Descargar XLSX
+          </button>
+          <button id="reset-button" class="secondary-button" disabled>
+            Limpiar
+          </button>
         </div>
 
-        <aside class="workspace-column workspace-column--side">
-          <section class="surface surface--tonal stats-card">
-            <div class="section-heading section-heading--compact">
-              <div>
-                <span class="section-kicker">Resumen</span>
-                <h2>Estado del procesamiento</h2>
-              </div>
-            </div>
+        <div class="summary-grid">
+          <article class="summary-card">
+            <span class="summary-card__label">Archivos cargados</span>
+            <strong id="file-count">0</strong>
+          </article>
+          <article class="summary-card">
+            <span class="summary-card__label">Filas extraídas</span>
+            <strong id="row-count">0</strong>
+          </article>
+          <article class="summary-card">
+            <span class="summary-card__label">Estado</span>
+            <strong id="status-text">Esperando archivos</strong>
+          </article>
+        </div>
 
-            <div class="summary-grid">
-              <article class="summary-card surface surface--soft">
-                <span class="summary-card__label">Archivos cargados</span>
-                <strong id="file-count">0</strong>
-              </article>
-              <article class="summary-card surface surface--soft">
-                <span class="summary-card__label">Filas extraídas</span>
-                <strong id="row-count">0</strong>
-              </article>
-              <article class="summary-card surface surface--soft">
-                <span class="summary-card__label">Estado</span>
-                <strong id="status-text">Esperando archivos</strong>
-              </article>
-            </div>
-          </section>
+        <div id="message" class="message" role="status" aria-live="polite"></div>
 
-          <section class="surface surface--elevated files-card">
-            <div class="section-heading section-heading--compact">
-              <div>
-                <span class="section-kicker">Trazabilidad</span>
-                <h2>Fuentes procesadas</h2>
-              </div>
-            </div>
+        <div class="files-panel">
+          <h2>Fuentes procesadas</h2>
+          <ul id="source-list" class="source-list">
+            <li class="empty-state">Todavía no hay archivos procesados.</li>
+          </ul>
+        </div>
+      </section>
 
-            <ul id="source-list" class="source-list">
-              <li class="empty-state">Todavía no hay archivos procesados.</li>
-            </ul>
-          </section>
-        </aside>
+      <section class="panel table-panel">
+        <div class="table-panel__header">
+          <h2>Vista previa</h2>
+          <span id="table-caption">No hay datos todavía.</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Cod</th>
+                <th>Secc</th>
+                <th>Curso</th>
+                <th>Tipo</th>
+                <th>Horario</th>
+                <th>Aula</th>
+                <th>Docente</th>
+              </tr>
+            </thead>
+            <tbody id="preview-body">
+              <tr>
+                <td colspan="7" class="empty-state empty-state--table">
+                  Arrastra un archivo HTML para ver la tabla.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
 
