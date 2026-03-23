@@ -308,17 +308,156 @@
     };
   }
 
+  function readUintBE(bytes, offset, size) {
+    let val = 0;
+    for (let i = 0; i < size; i++) {
+      val = val * 256 + bytes[offset + i];
+    }
+    return val;
+  }
+
+  function parseBinaryPlist(buffer) {
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.length;
+    const to = len - 32; // trailer starts here
+    const offsetSize = bytes[to + 6];
+    const refSize    = bytes[to + 7];
+    const numObjects = readUintBE(bytes, to + 8, 8);
+    const topObject  = readUintBE(bytes, to + 16, 8);
+    const offsetTableOffset = readUintBE(bytes, to + 24, 8);
+
+    const offsets = new Array(numObjects);
+    for (let i = 0; i < numObjects; i++) {
+      offsets[i] = readUintBE(bytes, offsetTableOffset + i * offsetSize, offsetSize);
+    }
+
+    function readObject(idx) {
+      let pos = offsets[idx];
+      const marker = bytes[pos++];
+      const type = (marker >> 4) & 0xf;
+      let count = marker & 0xf;
+
+      // Variable-length types use 0xf to signal an extended count encoded as the next object
+      if (count === 0xf && (type === 0x4 || type === 0x5 || type === 0x6 || type === 0xa || type === 0xd)) {
+        const intMarker = bytes[pos++];
+        const intSize = 1 << (intMarker & 0xf);
+        count = readUintBE(bytes, pos, intSize);
+        pos += intSize;
+      }
+
+      switch (type) {
+        case 0x0: // null / bool
+          if (marker === 0x08) return false;
+          if (marker === 0x09) return true;
+          return null;
+        case 0x1: { // int (count is size exponent)
+          const intSize = 1 << count;
+          return readUintBE(bytes, pos, intSize);
+        }
+        case 0x4: // data (raw bytes)
+          return bytes.slice(pos, pos + count);
+        case 0x5: { // ASCII string
+          let s = "";
+          for (let i = 0; i < count; i++) s += String.fromCharCode(bytes[pos + i]);
+          return s;
+        }
+        case 0x6: { // UTF-16BE string
+          let s = "";
+          for (let i = 0; i < count; i++) {
+            s += String.fromCharCode((bytes[pos + i * 2] << 8) | bytes[pos + i * 2 + 1]);
+          }
+          return s;
+        }
+        case 0xa: { // array
+          const arr = [];
+          for (let i = 0; i < count; i++) {
+            arr.push(readObject(readUintBE(bytes, pos + i * refSize, refSize)));
+          }
+          return arr;
+        }
+        case 0xd: { // dict
+          const dict = {};
+          for (let i = 0; i < count; i++) {
+            const keyIdx = readUintBE(bytes, pos + i * refSize, refSize);
+            const valIdx = readUintBE(bytes, pos + (count + i) * refSize, refSize);
+            dict[readObject(keyIdx)] = readObject(valIdx);
+          }
+          return dict;
+        }
+        default:
+          return null;
+      }
+    }
+
+    return readObject(topObject);
+  }
+
+  function parseXmlPlistWebarchive(text) {
+    const doc = new DOMParser().parseFromString(text, "text/xml");
+    const allKeys = doc.querySelectorAll("dict > key");
+    for (const key of allKeys) {
+      if (key.textContent.trim() === "WebMainResource") {
+        const dict = key.nextElementSibling;
+        if (dict && dict.tagName === "dict") {
+          const subKeys = dict.querySelectorAll("key");
+          for (const subKey of subKeys) {
+            if (subKey.textContent.trim() === "WebResourceData") {
+              const dataEl = subKey.nextElementSibling;
+              if (dataEl && dataEl.tagName === "data") {
+                const b64 = dataEl.textContent.replace(/\s+/g, "");
+                const binary = atob(b64);
+                const bytes = new Uint8Array(binary.length);
+                for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+                return new TextDecoder("UTF-8").decode(bytes);
+              }
+            }
+          }
+        }
+      }
+    }
+    throw new Error("No se encontró el recurso HTML principal en el webarchive XML.");
+  }
+
+  function extractHtmlFromWebarchive(buffer) {
+    const bytes = new Uint8Array(buffer);
+    const prefix = String.fromCharCode(...bytes.slice(0, 8));
+
+    if (prefix.startsWith("<?xml") || prefix.startsWith("<plist")) {
+      return parseXmlPlistWebarchive(new TextDecoder().decode(buffer));
+    }
+
+    if (!prefix.startsWith("bplist")) {
+      throw new Error("Formato de webarchive no reconocido.");
+    }
+
+    const plist = parseBinaryPlist(buffer);
+    const mainResource = plist && plist["WebMainResource"];
+    if (!mainResource) throw new Error("No se encontró WebMainResource en el webarchive.");
+
+    const resourceData = mainResource["WebResourceData"];
+    if (!resourceData) throw new Error("No se encontró WebResourceData en el webarchive.");
+
+    const encoding = mainResource["WebResourceTextEncodingName"] || "UTF-8";
+    return new TextDecoder(encoding).decode(resourceData);
+  }
+
   async function readFiles(fileList) {
-    const htmlFiles = [...fileList].filter((file) => /\.html?$/i.test(file.name));
-    if (!htmlFiles.length) {
-      throw new Error("Selecciona al menos un archivo HTML válido.");
+    const supported = [...fileList].filter((file) => /\.(html?|webarchive)$/i.test(file.name));
+    if (!supported.length) {
+      throw new Error("Selecciona al menos un archivo HTML o webarchive válido.");
     }
 
     const processed = [];
     const rows = [];
 
-    for (const file of htmlFiles) {
-      const text = await file.text();
+    for (const file of supported) {
+      let text;
+      if (/\.webarchive$/i.test(file.name)) {
+        const buffer = await file.arrayBuffer();
+        text = extractHtmlFromWebarchive(buffer);
+      } else {
+        text = await file.text();
+      }
       const fileRows = extractRowsFromHtml(text);
       processed.push({ name: file.name, rows: fileRows.length });
       rows.push(...fileRows);
@@ -413,18 +552,12 @@
     const fileInput = document.getElementById("file-input");
     const downloadButton = document.getElementById("download-button");
     const resetButton = document.getElementById("reset-button");
-    const rowCount = document.getElementById("row-count");
-    const fileCount = document.getElementById("file-count");
-    const statusText = document.getElementById("status-text");
     const previewBody = document.getElementById("preview-body");
     const sourceList = document.getElementById("source-list");
     const tableCaption = document.getElementById("table-caption");
     const message = document.getElementById("message");
 
     function refreshView() {
-      fileCount.textContent = String(state.files.length);
-      rowCount.textContent = String(state.rows.length);
-      statusText.textContent = state.rows.length ? "Listo para exportar" : "Esperando archivos";
       downloadButton.disabled = !state.rows.length;
       resetButton.disabled = !state.files.length;
       tableCaption.textContent = state.rows.length ? `Mostrando ${Math.min(state.rows.length, 50)} de ${state.rows.length} filas.` : "No hay datos todavía.";
@@ -505,6 +638,7 @@
     buildWorkbook,
     createWorkbookFiles,
     decodeHtmlEntities,
+    extractHtmlFromWebarchive,
     extractRowsFromHtml,
     makeSourceSummary,
     stripTags
