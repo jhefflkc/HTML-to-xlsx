@@ -276,6 +276,18 @@
     return createZip(createWorkbookFiles(files, rows));
   }
 
+  function buildFilename() {
+    const faculty = (document.getElementById("faculty-select")?.value || "UNI").trim();
+    const year    = (document.getElementById("year-input")?.value    || new Date().getFullYear()).toString().trim();
+    const period  = (document.getElementById("period-select")?.value || "1").trim();
+    return `${faculty}${year}-${period}.xlsx`;
+  }
+
+  function updateFilenamePreview() {
+    const preview = document.getElementById("filename-preview");
+    if (preview) preview.textContent = buildFilename();
+  }
+
   function downloadWorkbook(files, rows) {
     const data = buildWorkbook(files, rows);
     const blob = new Blob([data], {
@@ -284,7 +296,7 @@
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement("a");
     anchor.href = url;
-    anchor.download = files.length === 1 ? `${files[0].name.replace(/\.(html?|HTML?)$/, "")}.xlsx` : "horarios_uni_combinado.xlsx";
+    anchor.download = buildFilename();
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
@@ -478,6 +490,13 @@
     });
 
     resetButton.addEventListener("click", resetState);
+
+    // Live filename preview
+    ["faculty-select", "year-input", "period-select"].forEach(id => {
+      document.getElementById(id)?.addEventListener("input", updateFilenamePreview);
+    });
+    updateFilenamePreview();
+
     refreshView();
   }
 
